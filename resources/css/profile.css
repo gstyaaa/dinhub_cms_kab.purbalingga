@@ -1,0 +1,49 @@
+/* =====================================================
+   PROFILE MODULE STYLES
+   Sprint 4 - Initial Version (Hero Banners & Full Profile)
+===================================================== */
+
+/* 1. Hero Section */
+.profile-hero {
+    min-height: 420px;
+    background: linear-gradient(135deg, #0d6efd 0%, #084298 100%);
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+}
+
+.profile-hero-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.08;
+    background-image: radial-gradient(#ffffff 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.profile-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* 2. Hover Card Utility */
+.profile-card {
+    transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+}
+
+.profile-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0.5rem 1.25rem rgba(13, 110, 253, 0.15) !important;
+}
+
+/* 3. Accordion Enhancements */
+.accordion-button:not(.collapsed) {
+    background-color: rgba(13, 110, 253, 0.08);
+    color: #0d6efd;
+    font-weight: 700;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
