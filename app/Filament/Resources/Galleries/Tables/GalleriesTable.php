@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\GalleryAlbums\Tables;
+namespace App\Filament\Resources\Galleries\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
@@ -10,52 +10,39 @@ use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class GalleryAlbumsTable
+class GalleriesTable
 {
     public static function configure(Table $table): Table
     {
         return $table
+            ->defaultSort('created_at', 'desc')
             ->columns([
-
-                ImageColumn::make('cover_image')
-                    ->label('Cover')
+                ImageColumn::make('image')
+                    ->label('Foto')
                     ->disk('public')
-                    ->square(),
+                    ->square()
+                    ->size(70),
 
                 TextColumn::make('title')
-                    ->label('Album')
-                    ->searchable()
-                    ->sortable(),
+                    ->label('Judul / Kegiatan')
+                    ->placeholder('Tanpa Judul')
+                    ->searchable(),
 
-                IconColumn::make('is_active')
-                    ->label('Aktif')
+                IconColumn::make('is_published')
+                    ->label('Tayang')
                     ->boolean(),
 
-                TextColumn::make('images_count')
-                    ->counts('images')
-                    ->label('Jumlah Foto'),
-
                 TextColumn::make('created_at')
-                    ->label('Dibuat')
-                    ->date('d M Y')
-                    ->sortable(),
-
+                    ->label('Tanggal Upload')
+                    ->date('d M Y, H:i'),
             ])
-
-            ->filters([
-
-            ])
-
             ->recordActions([
                 EditAction::make(),
             ])
-
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
                 ]),
-            ])
-
-            ->defaultSort('created_at', 'desc');
+            ]);
     }
 }

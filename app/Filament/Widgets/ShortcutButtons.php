@@ -6,7 +6,7 @@ use Filament\Widgets\Widget;
 
 class ShortcutButtons extends Widget
 {
-    protected static string $view = 'filament.widgets.shortcut-buttons';
+    protected string $view = 'filament.widgets.shortcut-buttons';
 
     protected static ?int $sort = 3;
 

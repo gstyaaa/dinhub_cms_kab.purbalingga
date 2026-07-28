@@ -9,7 +9,7 @@ class PpidController extends Controller
     public function index()
     {
         $ppidPages = PpidPage::where('is_published', true)
-            ->orderBy('sort_order')
+            ->orderBy('id', 'asc')
             ->get();
 
         return view('ppid.index', compact('ppidPages'));

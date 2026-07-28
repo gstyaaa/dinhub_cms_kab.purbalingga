@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Galeri - Dinas Perhubungan Kabupaten Purbalingga')
+@section('title', 'Galeri Kegiatan - Dinas Perhubungan Kabupaten Purbalingga')
 
 @section('content')
 
@@ -15,43 +15,42 @@
                 <span class="badge bg-primary px-3 py-2 mb-2 rounded-pill">Dokumentasi</span>
                 <h2 class="fw-bold">Galeri Kegiatan</h2>
                 <p class="text-muted">
-                    Dokumentasi foto dan album kegiatan Dinas Perhubungan Kabupaten Purbalingga.
+                    Dokumentasi foto kegiatan Dinas Perhubungan Kabupaten Purbalingga.
                 </p>
             </div>
 
+            {{-- Grid 4 Kolom / 4 Per Baris --}}
             <div class="row g-4">
-                @forelse($albums as $album)
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card border-0 shadow-sm rounded-3 hover-card h-100 overflow-hidden">
-                            @if($album->cover_image)
-                                <img src="{{ Storage::url($album->cover_image) }}" class="card-img-top" alt="{{ $album->title }}" style="height: 220px; object-fit: cover;">
-                            @elseif($album->images->isNotEmpty())
-                                <img src="{{ Storage::url($album->images->first()->image_path) }}" class="card-img-top" alt="{{ $album->title }}" style="height: 220px; object-fit: cover;">
-                            @else
-                                <img src="{{ asset('images/gallery-placeholder.jpg') }}" class="card-img-top" alt="{{ $album->title }}" style="height: 220px; object-fit: cover;">
-                            @endif
+                @forelse($photos as $photo)
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 gallery-card position-relative">
+                            <div class="ratio ratio-1x1 overflow-hidden bg-light">
+                                <img src="{{ Storage::url($photo->image) }}" 
+                                     class="card-img-top object-fit-cover transition-transform" 
+                                     alt="{{ $photo->title ?? 'Foto Kegiatan' }}"
+                                     loading="lazy">
+                            </div>
 
-                            <div class="card-body">
-                                <span class="badge bg-secondary mb-2">
-                                    <i class="bi bi-images me-1"></i> {{ $album->images->count() }} Foto
-                                </span>
-                                <h5 class="fw-bold card-title mb-2">
-                                    {{ $album->title }}
-                                </h5>
-                                <p class="card-text text-muted small">
-                                    {{ Str::limit($album->description, 100) }}
-                                </p>
+                            <div class="card-body p-3 d-flex flex-column justify-content-between">
+                                <div>
+                                    <h6 class="fw-semibold card-title mb-1 text-truncate" title="{{ $photo->title }}">
+                                        {{ $photo->title ?: 'Dokumentasi Kegiatan' }}
+                                    </h6>
+                                    <small class="text-muted d-block">
+                                        <i class="bi bi-calendar3 me-1"></i> {{ $photo->created_at->format('d M Y') }}
+                                    </small>
+                                </div>
                             </div>
                         </div>
                     </div>
                 @empty
                     <div class="col-12">
-                        <div class="card border-0 shadow-sm rounded-3">
+                        <div class="card border-0 shadow-sm rounded-4">
                             <div class="card-body text-center py-5">
                                 <i class="bi bi-images display-3 text-secondary mb-3"></i>
-                                <h4 class="fw-bold">Belum Ada Galeri</h4>
+                                <h4 class="fw-bold">Belum Ada Foto Galeri</h4>
                                 <p class="text-muted mb-0">
-                                    Dokumentasi galeri kegiatan akan ditampilkan di sini.
+                                    Dokumentasi foto kegiatan akan diunggah dan ditampilkan di sini.
                                 </p>
                             </div>
                         </div>
@@ -60,9 +59,25 @@
             </div>
 
             <div class="d-flex justify-content-center mt-5">
-                {{ $albums->links() }}
+                {{ $photos->links() }}
             </div>
         </div>
     </section>
+
+    <style>
+        .gallery-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+        }
+        .transition-transform {
+            transition: transform 0.4s ease;
+        }
+        .gallery-card:hover .transition-transform {
+            transform: scale(1.08);
+        }
+    </style>
 
 @endsection

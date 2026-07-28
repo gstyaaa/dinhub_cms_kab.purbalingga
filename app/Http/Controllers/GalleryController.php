@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\GalleryAlbum;
+use App\Models\GalleryImage;
 
 class GalleryController extends Controller
 {
     public function index()
     {
-        $albums = GalleryAlbum::with('images')
-            ->where('is_active', true)
+        $photos = GalleryImage::where('is_published', true)
             ->latest()
-            ->paginate(9);
+            ->paginate(12);
 
-        return view('gallery.index', compact('albums'));
+        return view('gallery.index', compact('photos'));
     }
 }

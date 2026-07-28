@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\Agendas\Pages;
+namespace App\Filament\Resources\Galleries\Pages;
 
-use App\Filament\Resources\Agendas\AgendaResource;
+use App\Filament\Resources\Galleries\GalleryResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 
-class ListAgendas extends ListRecords
+class ListGalleries extends ListRecords
 {
-    protected static string $resource = AgendaResource::class;
+    protected static string $resource = GalleryResource::class;
 
     protected function getHeaderActions(): array
     {

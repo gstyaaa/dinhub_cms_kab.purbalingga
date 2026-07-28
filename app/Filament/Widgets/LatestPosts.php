@@ -3,7 +3,6 @@
 namespace App\Filament\Widgets;
 
 use App\Models\Post;
-use Filament\Tables\Columns\BadgeColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -44,12 +43,14 @@ class LatestPosts extends TableWidget
                 TextColumn::make('author.name')
                     ->label('Penulis'),
 
-                BadgeColumn::make('status')
+                TextColumn::make('status')
                     ->label('Status')
-                    ->colors([
-                        'success' => 'published',
-                        'warning' => 'draft',
-                    ]),
+                    ->badge()
+                    ->color(fn (string $state): string => match ($state) {
+                        'published' => 'success',
+                        'draft' => 'warning',
+                        default => 'gray',
+                    }),
 
                 TextColumn::make('published_at')
                     ->label('Tanggal')
