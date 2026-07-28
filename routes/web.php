@@ -38,7 +38,15 @@ Route::get('/berita/{slug}', [PostController::class, 'show'])->name('posts.show'
 
 Route::get('/galeri', [GalleryController::class, 'index'])->name('gallery.index');
 
-Route::get('/ppid', [PpidController::class, 'index'])->name('ppid.index');
+Route::prefix('ppid')
+    ->name('ppid.')
+    ->controller(PpidController::class)
+    ->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/program', 'program')->name('program');
+        Route::get('/sakip', 'sakip')->name('sakip');
+        Route::get('/peraturan', 'peraturan')->name('peraturan');
+    });
 
 Route::get('/tanya-dishub', [QuestionController::class, 'create'])->name('question.create');
 Route::post('/tanya-dishub', [QuestionController::class, 'store'])->name('question.store');

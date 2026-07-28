@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Announcement;
 use App\Models\Banner;
 use App\Models\Post;
-use Illuminate\Support\Facades\Schema;
 
 class HomeController extends Controller
 {
@@ -22,15 +21,8 @@ class HomeController extends Controller
             ->take(6)
             ->get();
 
-        $announcementsQuery = Announcement::query()
-            ->where('is_active', true);
-
-        if (Schema::hasColumn('announcements', 'show_on_running_text')) {
-            $announcementsQuery->where('show_on_running_text', true);
-        }
-
-        $announcements = $announcementsQuery
-            ->latest('publish_date')
+        $announcements = Announcement::active()
+            ->latest()
             ->take(5)
             ->get();
 

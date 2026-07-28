@@ -2,16 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\PpidPage;
-
 class PpidController extends Controller
 {
     public function index()
     {
-        $ppidPages = PpidPage::where('is_published', true)
-            ->orderBy('id', 'asc')
-            ->get();
+        return view('ppid.profile');
+    }
 
-        return view('ppid.index', compact('ppidPages'));
+    public function program()
+    {
+        return view('ppid.program');
+    }
+
+    public function sakip()
+    {
+        return view('ppid.sakip');
+    }
+
+    public function peraturan()
+    {
+        return view('ppid.peraturan');
     }
 }

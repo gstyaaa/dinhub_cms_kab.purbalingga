@@ -85,11 +85,40 @@
                 </li>
 
                 {{-- PPID --}}
-                <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('ppid.*') ? 'active' : '' }}"
-                        href="{{ route('ppid.index') }}">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle {{ request()->routeIs('ppid.*') ? 'active' : '' }}"
+                        href="{{ route('ppid.index') }}"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
                         PPID
                     </a>
+                    <ul class="dropdown-menu shadow border-0 rounded-4">
+                        <li>
+                            <a class="dropdown-item {{ request()->routeIs('ppid.index') ? 'active' : '' }}"
+                                href="{{ route('ppid.index') }}">
+                                Profil PPID
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item {{ request()->routeIs('ppid.program') ? 'active' : '' }}"
+                                href="{{ route('ppid.program') }}">
+                                Program & Kegiatan
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item {{ request()->routeIs('ppid.sakip') ? 'active' : '' }}"
+                                href="{{ route('ppid.sakip') }}">
+                                SAKIP
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item {{ request()->routeIs('ppid.peraturan') ? 'active' : '' }}"
+                                href="{{ route('ppid.peraturan') }}">
+                                Peraturan
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
                 {{-- Berita --}}
