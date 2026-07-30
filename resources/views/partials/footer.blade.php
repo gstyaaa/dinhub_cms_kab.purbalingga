@@ -36,10 +36,10 @@
                 </div>
             </div>
 
-            <!-- Kolom 2 : Layanan Publik -->
+            <!-- Kolom 2 : Layanan Publik & Statistik Pengunjung -->
             <div class="col-lg-4 col-md-6">
                 <h6 class="fw-bold mb-3 text-warning">Layanan Publik</h6>
-                <ul class="list-unstyled small lh-lg mb-0">
+                <ul class="list-unstyled small lh-lg mb-3">
                     <li class="mb-2">
                         <a href="{{ config('links.skm.url') }}" target="_blank" rel="noopener noreferrer" class="text-white-50 text-decoration-none hover-white">
                             <i class="bi bi-star-fill text-warning me-2"></i> Survei Kepuasan Masyarakat <i class="bi bi-box-arrow-up-right small text-warning ms-1"></i>
@@ -56,24 +56,6 @@
                         </a>
                     </li>
                 </ul>
-            </div>
-
-            <!-- Kolom 3 : Lokasi Kantor & Statistik Pengunjung -->
-            <div class="col-lg-4 col-md-12">
-                <h6 class="fw-bold mb-3 text-warning">Lokasi Kantor</h6>
-                <a href="{{ config('dishub.maps.url') }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
-                    <div class="card bg-secondary bg-opacity-25 border-secondary border-opacity-50 text-white rounded-3 shadow-sm hover-card p-3">
-                        <div class="card-body p-2 text-center">
-                            <div class="fs-2 mb-2">🗺️</div>
-                            <h6 class="fw-bold mb-2 text-white small">
-                                Kantor {{ config('dishub.name') }}
-                            </h6>
-                            <span class="small text-warning fw-semibold">
-                                {{ config('dishub.maps.label') }} <i class="bi bi-box-arrow-up-right ms-1"></i>
-                            </span>
-                        </div>
-                    </div>
-                </a>
 
                 {{-- Widget Statistik Pengunjung (Ringkas & Elegan) --}}
                 <div class="bg-secondary bg-opacity-25 border border-secondary border-opacity-50 text-white rounded-3 p-3 mt-3">
@@ -96,6 +78,24 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Kolom 3 : Lokasi Kantor -->
+            <div class="col-lg-4 col-md-12">
+                <h6 class="fw-bold mb-3 text-warning">Lokasi Kantor</h6>
+                <a href="{{ config('dishub.maps.url') }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                    <div class="card bg-secondary bg-opacity-25 border-secondary border-opacity-50 text-white rounded-3 shadow-sm hover-card p-3">
+                        <div class="card-body p-2 text-center">
+                            <div class="fs-2 mb-2">🗺️</div>
+                            <h6 class="fw-bold mb-2 text-white small">
+                                Kantor {{ config('dishub.name') }}
+                            </h6>
+                            <span class="small text-warning fw-semibold">
+                                {{ config('dishub.maps.label') }} <i class="bi bi-box-arrow-up-right ms-1"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
             </div>
 
         </div>
