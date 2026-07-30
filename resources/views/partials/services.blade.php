@@ -44,17 +44,17 @@
                 </a>
             </div>
 
-            {{-- 3. Galeri (Internal) --}}
+            {{-- 3. Tanya Dinhub (Internal) --}}
             <div class="col-12 col-md-6 col-lg-4 reveal-scale delay-3">
-                <a href="{{ route('gallery.index') }}" class="text-decoration-none text-dark">
+                <a href="{{ route('question.create') }}" class="text-decoration-none text-dark">
                     <div class="card h-100 border-0 shadow-blue-sm rounded-3 hover-card p-3">
                         <div class="card-body text-center">
                             <div class="mb-3">
-                                <i class="bi bi-images service-icon"></i>
+                                <i class="bi bi-chat-left-text service-icon"></i>
                             </div>
-                            <h5 class="fw-bold card-title mb-2">Galeri</h5>
+                            <h5 class="fw-bold card-title mb-2">Tanya Dinhub</h5>
                             <p class="card-text text-muted small">
-                                Dokumentasi foto dan kegiatan Dinas Perhubungan Kabupaten Purbalingga.
+                                Layanan pengajuan pertanyaan, pengaduan, dan aspirasi masyarakat.
                             </p>
                         </div>
                     </div>

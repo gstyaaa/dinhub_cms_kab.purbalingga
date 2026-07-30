@@ -12,7 +12,7 @@
 
         <!-- Kanan : Instagram -->
         <div class="d-flex align-items-center gap-3 ms-auto">
-            <a href="{{ config('dishub.instagram') }}" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-none d-flex align-items-center gap-1" title="Instagram Dinhub">
+            <a href="{{ config('dishub.instagram') }}" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-none d-flex align-items-center gap-1" title="Instagram {{ config('dishub.short_name', 'Dinhub Purbalingga') }}">
                 <i class="bi bi-instagram text-warning"></i>
                 <span class="d-none d-sm-inline">Instagram</span>
             </a>

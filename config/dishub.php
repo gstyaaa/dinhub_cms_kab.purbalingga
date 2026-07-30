@@ -10,6 +10,8 @@ return [
 
     'name' => 'Dinas Perhubungan Kabupaten Purbalingga',
 
+    'short_name' => 'Dinhub Purbalingga',
+
     'description' => 'Website resmi sebagai media informasi dan pelayanan publik Dinas Perhubungan Kabupaten Purbalingga.',
 
     'address' => 'Jl. Kalikajar No.18, Trenggiling, Kalikajar, Kec. Kaligondang, Kabupaten Purbalingga, Jawa Tengah 53391',

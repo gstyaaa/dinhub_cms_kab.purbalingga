@@ -2,10 +2,11 @@
 
 namespace App\Filament\Resources\Questions\Schemas;
 
+use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Section;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
 
 class QuestionForm
@@ -15,32 +16,28 @@ class QuestionForm
         return $schema
             ->components([
 
-                Section::make('Data Pelapor')
+                Section::make('Informasi Masyarakat')
                     ->schema([
 
-                        TextInput::make('ticket_code')
-                            ->label('Kode Tiket')
-                            ->disabled()
-                            ->dehydrated(false),
-
-                        TextInput::make('name')
-                            ->label('Nama')
+                        TextInput::make('full_name')
+                            ->label('Nama Lengkap')
                             ->disabled()
                             ->dehydrated(false),
 
                         TextInput::make('email')
-                            ->label('Email')
+                            ->label('Alamat Email')
                             ->email()
                             ->disabled()
                             ->dehydrated(false),
 
                         TextInput::make('subject')
                             ->label('Subjek')
+                            ->columnSpanFull()
                             ->disabled()
                             ->dehydrated(false),
 
-                        Textarea::make('question')
-                            ->label('Pertanyaan')
+                        Textarea::make('message')
+                            ->label('Detail Pertanyaan')
                             ->rows(6)
                             ->disabled()
                             ->dehydrated(false)
@@ -49,27 +46,18 @@ class QuestionForm
                     ])
                     ->columns(2),
 
-                Section::make('Penanganan')
+                Section::make('Status Balasan')
                     ->schema([
 
-                        Select::make('status')
-                            ->label('Status')
-                            ->options([
-                                'pending' => 'Menunggu',
-                                'process' => 'Diproses',
-                                'completed' => 'Selesai',
-                            ])
-                            ->required()
-                            ->native(false),
+                        Toggle::make('is_replied')
+                            ->label('Sudah Dibalas via Email Resmi'),
 
-                        Textarea::make('answer')
-                            ->label('Jawaban')
-                            ->rows(8)
-                            ->placeholder('Tuliskan jawaban kepada masyarakat...')
-                            ->columnSpanFull(),
+                        DateTimePicker::make('replied_at')
+                            ->label('Waktu Dibalas')
+                            ->nullable(),
 
                     ])
-                    ->columns(1),
+                    ->columns(2),
 
             ]);
     }

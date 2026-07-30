@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Beranda - Dinas Perhubungan Kabupaten Purbalingga')
+@section('title', 'Beranda | ' . config('dishub.name'))
 
 @section('content')
 

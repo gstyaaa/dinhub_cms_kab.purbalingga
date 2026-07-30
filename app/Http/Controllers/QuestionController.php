@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreQuestionRequest;
 use App\Models\Question;
-use Illuminate\Http\Request;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\RateLimiter;
 
 class QuestionController extends Controller
 {
@@ -13,20 +13,23 @@ class QuestionController extends Controller
         return view('question.create');
     }
 
-    public function store(Request $request)
+    public function store(StoreQuestionRequest $request)
     {
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'subject' => 'required|string|max:255',
-            'question' => 'required|string',
-        ]);
+        $key = 'question-submission:' . $request->ip();
 
-        $validated['ticket_code'] = 'TKT-' . strtoupper(Str::random(8));
-        $validated['status'] = 'pending';
+        if (RateLimiter::tooManyAttempts($key, 3)) {
+            $seconds = RateLimiter::availableIn($key);
+            $minutes = ceil($seconds / 60);
 
-        Question::create($validated);
+            return back()
+                ->withInput()
+                ->with('error', "Terlalu banyak pengiriman pesan. Silakan coba lagi dalam {$minutes} menit.");
+        }
 
-        return back()->with('success', 'Pertanyaan Anda berhasil dikirim dengan Kode Tiket: ' . $validated['ticket_code']);
+        RateLimiter::hit($key, 600);
+
+        Question::create($request->validated());
+
+        return back()->with('success', 'Pertanyaan Anda berhasil dikirim. Terima kasih telah menghubungi Dinas Perhubungan Kabupaten Purbalingga. Apabila diperlukan tindak lanjut, jawaban resmi akan dikirim melalui alamat email yang Anda daftarkan. Pastikan email yang dimasukkan aktif dan dapat menerima pesan.');
     }
 }

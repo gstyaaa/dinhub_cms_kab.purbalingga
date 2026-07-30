@@ -1,8 +1,13 @@
 @import './profile.css';
 
 /* ==========================
-   HERO
+   HERO & GENERAL UTILITIES
 ========================== */
+
+.placeholder-sm::placeholder {
+    font-size: 0.85rem !important;
+    opacity: 0.75;
+}
 
 
 .hero-slide{
@@ -10,6 +15,28 @@
     background-size:cover;
     background-position:center;
     position:relative;
+}
+
+@media (max-width: 768px) {
+    .hero-slide {
+        height: min(380px, 55vh);
+        min-height: 340px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(1.5rem, 5.5vw, 2.25rem);
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+        margin-top: 0.5rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .hero-content .btn {
+        padding: 0.5rem 1.25rem;
+        font-size: 0.95rem;
+    }
 }
 
 .hero-overlay{
@@ -149,12 +176,13 @@
 }
 
 .running-label{
-    background:#084298;
+    background:#ffc107;
+    color:#212529;
     padding:0 24px;
     height:52px;
     display:flex;
     align-items:center;
-    font-weight:600;
+    font-weight:700;
     flex-shrink:0;
 }
 

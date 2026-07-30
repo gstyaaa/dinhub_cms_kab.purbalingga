@@ -5,11 +5,11 @@
         <a class="navbar-brand d-flex align-items-center gap-2 fw-bold text-primary"
             href="{{ route('home') }}">
             <img src="{{ asset(config('dishub.logo', 'images/no-image.jpg')) }}"
-                alt="Logo Dinhub"
+                alt="Logo {{ config('dishub.short_name', 'Dinhub Purbalingga') }}"
                 height="42"
                 class="object-fit-contain">
 
-            <span>DINHUB PURBALINGGA</span>
+            <span>{{ strtoupper(config('dishub.short_name', 'Dinhub Purbalingga')) }}</span>
         </a>
 
         {{-- Mobile Toggle --}}

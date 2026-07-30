@@ -9,29 +9,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('questions', function (Blueprint $table) {
-
             $table->id();
-
-            $table->string('ticket_code')->unique();
-
-            $table->string('name');
-
-            $table->string('email');
-
-            $table->string('subject');
-
-            $table->longText('question');
-
-            $table->longText('answer')->nullable();
-
-            $table->enum('status', [
-                'pending',
-                'process',
-                'completed',
-            ])->default('pending');
-
-            $table->timestamp('answered_at')->nullable();
-
+            $table->string('full_name', 100);
+            $table->string('email', 255);
+            $table->string('subject', 150);
+            $table->text('message');
+            $table->boolean('is_replied')->default(false);
+            $table->timestamp('replied_at')->nullable();
             $table->timestamps();
         });
     }

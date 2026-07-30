@@ -30,7 +30,7 @@ class QuestionResource extends Resource
 
     protected static ?int $navigationSort = 1;
 
-    protected static ?string $recordTitleAttribute = 'ticket_code';
+    protected static ?string $recordTitleAttribute = 'subject';
 
     public static function form(Schema $schema): Schema
     {

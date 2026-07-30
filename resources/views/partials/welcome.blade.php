@@ -4,7 +4,8 @@
             <div class="col-lg-4 text-center reveal-left">
                 <img src="{{ asset('images/kadishub-placeholder.jpg') }}"
                      class="img-fluid rounded-3 shadow-sm"
-                     alt="Kepala Dinas Perhubungan">
+                     alt="Kepala {{ config('dishub.name') }}"
+                     loading="lazy">
             </div>
 
             <div class="col-lg-8 reveal-right">
@@ -15,12 +16,12 @@
                 <h2 class="fw-bold mb-4">
                     Selamat Datang di Website Resmi
                     <span class="text-primary d-block">
-                        Dinas Perhubungan Kabupaten Purbalingga
+                        {{ config('dishub.name') }}
                     </span>
                 </h2>
 
                 <p class="text-secondary fs-5">
-                    Website ini menjadi media informasi resmi mengenai pelayanan publik, berita, program kerja, serta berbagai kegiatan Dinas Perhubungan Kabupaten Purbalingga.
+                    Website ini menjadi media informasi resmi mengenai pelayanan publik, berita, program kerja, serta berbagai kegiatan {{ config('dishub.name') }}.
                 </p>
 
                 <p class="text-secondary">
@@ -29,10 +30,10 @@
 
                 <div class="mt-4">
                     <h5 class="fw-bold mb-0">
-                        R. Raditya Wibowo, S.STP., M.Si.
+                        SUTRISNO, S.Sos
                     </h5>
                     <p class="text-muted small">
-                        Kepala Dinas Perhubungan Kabupaten Purbalingga
+                        Kepala {{ config('dishub.name') }}
                     </p>
                 </div>
             </div>

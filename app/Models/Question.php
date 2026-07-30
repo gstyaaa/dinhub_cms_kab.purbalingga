@@ -2,31 +2,24 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
-
-        'ticket_code',
-
-        'name',
-
+        'full_name',
         'email',
-
         'subject',
-
-        'question',
-
-        'answer',
-
-        'status',
-
-        'answered_at',
+        'message',
+        'is_replied',
+        'replied_at',
     ];
 
     protected $casts = [
-
-        'answered_at' => 'datetime',
+        'is_replied' => 'boolean',
+        'replied_at' => 'datetime',
     ];
 }

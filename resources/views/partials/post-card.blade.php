@@ -1,9 +1,9 @@
 <div class="{{ $colClass ?? 'col-12 col-md-6 col-lg-4' }} reveal-scale">
     <div class="card news-card h-100 border-0 shadow-sm rounded-3 hover-card">
         @if($post->thumbnail)
-            <img src="{{ Storage::url($post->thumbnail) }}" class="card-img-top" alt="{{ $post->title }}" style="height: 200px; object-fit: cover;">
+            <img src="{{ Storage::url($post->thumbnail) }}" class="card-img-top" alt="{{ $post->title }}" style="height: 200px; object-fit: cover;" loading="lazy">
         @else
-            <img src="{{ asset('images/news-placeholder.jpg') }}" class="card-img-top" alt="{{ $post->title }}" style="height: 200px; object-fit: cover;">
+            <img src="{{ asset('images/news-placeholder.jpg') }}" class="card-img-top" alt="{{ $post->title }}" style="height: 200px; object-fit: cover;" loading="lazy">
         @endif
 
         <div class="card-body d-flex flex-column">
