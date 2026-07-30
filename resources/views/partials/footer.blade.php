@@ -78,21 +78,21 @@
                 {{-- Widget Statistik Pengunjung (Ringkas & Elegan) --}}
                 <div class="bg-secondary bg-opacity-25 border border-secondary border-opacity-50 text-white rounded-3 p-3 mt-3">
                     <div class="d-flex align-items-center gap-2 mb-2 pb-2 border-bottom border-secondary border-opacity-50">
-                        <i class="bi bi-bar-chart-line-fill text-warning"></i>
-                        <span class="fw-semibold small text-white">Statistik Pengunjung</span>
+                        <i class="bi bi-people-fill text-warning"></i>
+                        <span class="fw-semibold small text-white">👥 Statistik Pengunjung</span>
                     </div>
                     <div class="row g-2 text-center" style="font-size: 0.8rem;">
                         <div class="col-4 border-end border-secondary border-opacity-50">
                             <div class="text-white-50">Hari Ini</div>
-                            <div class="fw-bold text-warning mt-1">{{ number_format($todayVisitors ?? 142) }}</div>
+                            <div class="fw-bold text-warning mt-1">{{ number_format($todayVisitors ?? 0) }}</div>
                         </div>
                         <div class="col-4 border-end border-secondary border-opacity-50">
                             <div class="text-white-50">Bulan Ini</div>
-                            <div class="fw-bold text-warning mt-1">{{ number_format($monthVisitors ?? 3850) }}</div>
+                            <div class="fw-bold text-warning mt-1">{{ number_format($monthVisitors ?? 0) }}</div>
                         </div>
                         <div class="col-4">
                             <div class="text-white-50">Total</div>
-                            <div class="fw-bold text-warning mt-1">{{ number_format($totalVisitors ?? 45920) }}</div>
+                            <div class="fw-bold text-warning mt-1">{{ number_format($totalVisitors ?? 0) }}</div>
                         </div>
                     </div>
                 </div>
