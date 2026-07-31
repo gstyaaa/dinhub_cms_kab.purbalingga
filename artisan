@@ -6,6 +6,9 @@ use Symfony\Component\Console\Input\ArgvInput;
 
 define('LARAVEL_START', microtime(true));
 
+// Disable time limit for artisan console tasks
+@ini_set('max_execution_time', '0');
+
 // Register the Composer autoloader...
 require __DIR__.'/vendor/autoload.php';
 
