@@ -1,154 +1,68 @@
-@if($banners->isNotEmpty())
+<section class="hero-fullwidth-section position-relative overflow-hidden border-bottom" style="min-height: 520px; background-color: #030812;">
 
-<div id="heroCarousel"
-     class="carousel slide carousel-fade"
-     data-bs-ride="carousel">
-
-    <div class="carousel-inner">
-
-        @foreach($banners as $banner)
-
-        <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-
-            <div class="hero-slide"
-                 style="background-image:url('{{ Storage::url($banner->image) }}')">
-
-                <div class="hero-overlay">
-
-                    <div class="container hero-content">
-
-                        <h1 class="display-3 fw-bold">
-
-                            {{ $banner->title }}
-
-                        </h1>
-
-                        @if($banner->subtitle)
-
-                        <p class="lead my-4">
-
-                            {{ $banner->subtitle }}
-
-                        </p>
-
-                        @endif
-
-                        @if($banner->button_text)
-
-                        <a href="{{ $banner->button_link ?: '#' }}"
-                           class="btn btn-warning btn-lg">
-
-                            {{ $banner->button_text }}
-
-                        </a>
-
-                        @endif
-
+    {{-- 1. FULL WIDTH BACKGROUND IMAGE SLIDER --}}
+    <div id="heroBgCarousel" class="carousel slide carousel-fade position-absolute top-0 start-0 w-100 h-100" data-bs-ride="carousel" data-bs-interval="4500" style="z-index: 1;">
+        <div class="carousel-inner h-100">
+            @if($banners->isNotEmpty())
+                @foreach($banners as $banner)
+                    <div class="carousel-item h-100 {{ $loop->first ? 'active' : '' }}">
+                        <img src="{{ Storage::url($banner->image) }}"
+                             class="d-block w-100 h-100 object-fit-cover"
+                             style="object-position: center 25%;"
+                             alt="{{ $banner->title ?: 'Banner Dinhub Purbalingga' }}"
+                             loading="lazy">
                     </div>
-
+                @endforeach
+            @else
+                <div class="carousel-item h-100 active">
+                    <img src="{{ asset('images/hero-default.jpg') }}"
+                         class="d-block w-100 h-100 object-fit-cover"
+                         style="object-position: center 25%;"
+                         alt="Hero Dinhub Purbalingga">
                 </div>
-
-            </div>
-
+            @endif
         </div>
-
-        @endforeach
-
     </div>
 
-    @if($banners->count() > 1)
+    {{-- 2. SOFT & ELEGANT LEFT DARK GRADIENT OVERLAY --}}
+    <div class="position-absolute top-0 start-0 w-100 h-100"
+         style="z-index: 2; pointer-events: none; background: linear-gradient(to right, rgba(3, 8, 18, 0.88) 0%, rgba(3, 8, 18, 0.65) 45%, rgba(3, 8, 18, 0.15) 75%, transparent 100%);">
+    </div>
 
-    <button class="carousel-control-prev"
-            type="button"
-            data-bs-target="#heroCarousel"
-            data-bs-slide="prev">
-
-        <span class="carousel-control-prev-icon"></span>
-
-    </button>
-
-    <button class="carousel-control-next"
-            type="button"
-            data-bs-target="#heroCarousel"
-            data-bs-slide="next">
-
-        <span class="carousel-control-next-icon"></span>
-
-    </button>
-
-    @endif
-
-</div>
-
-@else
-
-<section class="py-5 bg-white border-bottom">
-
-    <div class="container">
-
-        <div class="row align-items-center gy-4">
-
+    {{-- 3. FOREGROUND CONTENT WITH EXACT ORIGINAL TYPOGRAPHY --}}
+    <div class="container position-relative py-5 my-md-3" style="z-index: 3;">
+        <div class="row align-items-center py-4">
             <div class="col-lg-7 reveal-left">
-
                 <span class="badge bg-primary mb-3">
-
                     Portal Resmi
-
                 </span>
 
-                <h1 class="fw-bold">
-
+                <h1 class="fw-bold text-white">
                     Selamat Datang di Portal Resmi
-
                     <span class="text-primary d-block">
-
                         Dinas Perhubungan Kabupaten Purbalingga
-
                     </span>
-
                 </h1>
 
-                <p class="lead text-secondary mt-4">
-
+                <p class="lead text-white-50 mt-4">
                     Mewujudkan pelayanan transportasi yang aman,
                     tertib, nyaman dan berkelanjutan bagi seluruh
                     masyarakat Kabupaten Purbalingga.
-
                 </p>
 
                 <div class="mt-4">
-
                     <a href="#welcome"
                        class="btn btn-primary me-2">
-
                         Pelajari Lebih Lanjut
-
                     </a>
 
                     <a href="#footer"
-                       class="btn btn-outline-primary">
-
+                       class="btn btn-outline-light">
                         Hubungi Kami
-
                     </a>
-
                 </div>
-
             </div>
-
-            <div class="col-lg-5 reveal-right">
-
-                <img
-                    src="{{ asset('images/hero-default.jpg') }}"
-                    class="img-fluid rounded shadow"
-                    alt="Hero">
-
-            </div>
-
         </div>
-
     </div>
 
 </section>
-
-@endif

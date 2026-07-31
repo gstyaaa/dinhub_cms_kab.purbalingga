@@ -15,45 +15,35 @@ class BannerForm
         return $schema
             ->components([
 
-                Section::make('Informasi Banner')
+                Section::make('Unggah Gambar Banner')
                     ->schema([
-
-                        TextInput::make('title')
-                            ->label('Judul Banner')
-                            ->required()
-                            ->maxLength(255),
-
-                        TextInput::make('subtitle')
-                            ->label('Sub Judul')
-                            ->maxLength(255),
 
                         FileUpload::make('image')
                             ->label('Gambar Banner')
                             ->disk('public')
                             ->directory('banners')
                             ->image()
-                            ->required(),
+                            ->required()
+                            ->helperText('Disarankan menggunakan gambar berformat Lanskap / Rasio 16:9 (contoh: 1920 × 600 px) agar tampil maksimal.')
+                            ->columnSpanFull(),
 
-                        TextInput::make('button_text')
-                            ->label('Teks Tombol'),
-
-                        TextInput::make('button_link')
-                            ->label('Link Tombol')
-                            ->placeholder('/berita atau https://example.com')
+                        TextInput::make('title')
+                            ->label('Nama / Judul Banner (Opsional)')
+                            ->placeholder('Contoh: Banner Mudik Gratis 2026')
                             ->maxLength(255),
 
                         TextInput::make('sort_order')
-                            ->label('Urutan')
+                            ->label('Urutan Tampil')
                             ->numeric()
                             ->default(0)
                             ->required(),
 
                         Toggle::make('is_active')
-                            ->label('Aktif')
+                            ->label('Aktifkan Banner')
                             ->default(true),
 
                     ])
-                    ->columns(2),
+                    ->columns(3),
 
             ]);
     }

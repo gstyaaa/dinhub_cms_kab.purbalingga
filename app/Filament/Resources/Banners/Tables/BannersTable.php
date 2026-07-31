@@ -24,13 +24,10 @@ class BannersTable
                     ->square(),
 
                 TextColumn::make('title')
-                    ->label('Judul')
+                    ->label('Nama / Judul')
+                    ->placeholder('Tanpa Judul')
                     ->searchable()
                     ->sortable(),
-
-                TextColumn::make('subtitle')
-                    ->label('Sub Judul')
-                    ->limit(30),
 
                 TextColumn::make('sort_order')
                     ->label('Urutan')
@@ -58,8 +55,8 @@ class BannersTable
                         ->label('Hapus Pilihan'),
                 ])->label('Tindakan Massal'),
             ])
-            ->emptyStateHeading('Belum Ada Banner Hero')
-            ->emptyStateDescription('Silakan unggah gambar banner hero untuk slider homepage.')
+            ->emptyStateHeading('Belum Ada Banner')
+            ->emptyStateDescription('Silakan unggah gambar banner untuk slider di halaman depan.')
             ->emptyStateIcon('heroicon-o-photo');
     }
 }
