@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\VisitorLog;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -22,6 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Paginator::useBootstrapFive();
+
         // 1. Tracking Pengunjung Otomatis di Setiap Halaman Publik
         if (! Request::is('admin*') && ! Request::is('api*') && ! Request::is('livewire*')) {
             try {

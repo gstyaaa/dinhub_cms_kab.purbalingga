@@ -280,6 +280,90 @@
         .delay-3 { transition-delay: 0.75s !important; }
         .delay-4 { transition-delay: 1.00s !important; }
         .delay-5 { transition-delay: 1.25s !important; }
+
+        /* Global SVG & Simple Clean Pagination */
+        svg {
+            max-width: 100%;
+        }
+
+        .pagination svg, nav svg {
+            width: 1rem !important;
+            height: 1rem !important;
+            max-width: 1rem !important;
+            max-height: 1rem !important;
+        }
+
+        .pagination {
+            display: flex;
+            gap: 6px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            justify-content: center;
+        }
+
+        .pagination .page-item .page-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 36px;
+            height: 36px;
+            padding: 0 10px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            border-radius: 8px !important;
+            color: #0d6efd;
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .pagination .page-item .page-link i {
+            font-size: 0.85rem;
+            line-height: 1;
+        }
+
+        .pagination .page-item.active .page-link {
+            background-color: #0d6efd !important;
+            border-color: #0d6efd !important;
+            color: #ffffff !important;
+            box-shadow: 0 4px 10px rgba(13, 110, 253, 0.25);
+        }
+
+        .pagination .page-item:not(.active):not(.disabled) .page-link:hover {
+            background-color: #eef5ff;
+            color: #0d6efd;
+            border-color: #0d6efd;
+        }
+
+        .pagination .page-item.disabled .page-link {
+            color: #adb5bd !important;
+            background-color: #f8f9fa !important;
+            border-color: #e9ecef !important;
+            cursor: not-allowed;
+        }
+
+        /* Modern Minimalist Sidebar Category Pills */
+        .card .nav-pills .nav-link {
+            color: #475569;
+            font-weight: 500;
+            font-size: 0.925rem;
+            border: 1px solid transparent;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .card .nav-pills .nav-link:hover:not(.active) {
+            background-color: #f1f5f9;
+            color: #0d6efd;
+        }
+
+        .card .nav-pills .nav-link.active {
+            background-color: #eef5ff !important;
+            color: #0d6efd !important;
+            font-weight: 600;
+            border-color: rgba(13, 110, 253, 0.15) !important;
+        }
     </style>
 
     @stack('styles')
