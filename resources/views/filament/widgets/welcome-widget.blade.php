@@ -4,7 +4,7 @@
             <div style="flex: 1; min-width: 280px;">
                 <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255, 255, 255, 0.18); padding: 0.35rem 0.85rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; margin-bottom: 0.75rem; border: 1px solid rgba(255, 255, 255, 0.25);">
                     <span style="height: 8px; width: 8px; background-color: #10b981; border-radius: 50%; display: inline-block;"></span>
-                    <span>System Active &bull; {{ \Carbon\Carbon::now()->locale('id')->isoFormat('dddd, D MMMM YYYY') }}</span>
+                    <span>Sistem Aktif &bull; {{ \Carbon\Carbon::now()->locale('id')->isoFormat('dddd, D MMMM YYYY') }}</span>
                 </div>
 
                 <h2 style="font-size: 1.65rem; font-weight: 800; margin: 0 0 0.5rem 0; color: #ffffff; line-height: 1.2;">
