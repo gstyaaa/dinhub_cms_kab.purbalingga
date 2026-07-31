@@ -38,7 +38,7 @@
 
             <!-- Kolom 2 : Layanan Publik -->
             <div class="col-lg-3 col-md-6">
-                <h6 class="fw-bold mb-3 text-warning">Layanan Publik</h6>
+                <h6 class="fw-bold mb-3 text-white">Layanan Publik</h6>
                 <ul class="list-unstyled small lh-lg mb-0">
                     <li class="mb-2">
                         <a href="{{ config('links.skm.url') }}" target="_blank" rel="noopener noreferrer" class="text-white-50 text-decoration-none hover-white">
@@ -60,7 +60,7 @@
 
             <!-- Kolom 3 : Statistik Pengunjung (Kotak Ramping) -->
             <div class="col-lg-2 col-md-6">
-                <h6 class="fw-bold mb-3 text-warning text-nowrap">Statistik Pengunjung</h6>
+                <h6 class="fw-bold mb-3 text-white text-nowrap">Statistik Pengunjung</h6>
                 <div class="card bg-secondary bg-opacity-25 border-secondary border-opacity-50 text-white rounded-3 shadow-sm hover-card p-3" style="max-width: 210px;">
                     <div class="card-body p-1">
                         <div class="mb-2 pb-2 border-bottom border-secondary border-opacity-25">
@@ -90,8 +90,8 @@
             <!-- Kolom 4 : Lokasi Kantor -->
             <div class="col-lg-3 col-md-12">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h6 class="fw-bold mb-0 text-warning">Lokasi Kantor</h6>
-                    <a href="{{ config('dishub.maps.url') }}" target="_blank" rel="noopener noreferrer" class="small text-warning text-decoration-none fw-semibold">
+                    <h6 class="fw-bold mb-0 text-white">Lokasi Kantor</h6>
+                    <a href="{{ config('dishub.maps.url') }}" target="_blank" rel="noopener noreferrer" class="small text-white text-decoration-none fw-semibold">
                         Buka Maps <i class="bi bi-box-arrow-up-right ms-1"></i>
                     </a>
                 </div>
