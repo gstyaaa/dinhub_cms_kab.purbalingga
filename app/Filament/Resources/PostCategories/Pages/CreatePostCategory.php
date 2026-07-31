@@ -8,4 +8,9 @@ use Filament\Resources\Pages\CreateRecord;
 class CreatePostCategory extends CreateRecord
 {
     protected static string $resource = PostCategoryResource::class;
+
+    public function getTitle(): string|\Illuminate\Contracts\Support\Htmlable
+    {
+        return 'Tambah Kategori Baru';
+    }
 }

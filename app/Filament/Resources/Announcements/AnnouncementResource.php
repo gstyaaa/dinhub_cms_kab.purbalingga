@@ -18,6 +18,14 @@ class AnnouncementResource extends Resource
 {
     protected static ?string $model = Announcement::class;
 
+    protected static ?string $navigationLabel = 'Pengumuman Running Text';
+
+    protected static ?string $modelLabel = 'Pengumuman';
+
+    protected static ?string $pluralModelLabel = 'Pengumuman';
+
+    protected static \UnitEnum|string|null $navigationGroup = 'Konten';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static ?string $recordTitleAttribute = 'title';

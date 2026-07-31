@@ -78,17 +78,23 @@ class PostsTable
             ])
 
             ->recordActions([
-                EditAction::make(),
+                EditAction::make()
+                    ->label('Ubah'),
             ])
 
             ->toolbarActions([
                 BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                    ForceDeleteBulkAction::make(),
-                    RestoreBulkAction::make(),
-                ]),
+                    DeleteBulkAction::make()
+                        ->label('Hapus Pilihan'),
+                    ForceDeleteBulkAction::make()
+                        ->label('Hapus Permanen'),
+                    RestoreBulkAction::make()
+                        ->label('Pulihkan Pilihan'),
+                ])->label('Tindakan Massal'),
             ])
-
-            ->defaultSort('created_at', 'desc');
+            ->defaultSort('created_at', 'desc')
+            ->emptyStateHeading('Belum Ada Berita')
+            ->emptyStateDescription('Silakan tulis dan publikasikan berita baru.')
+            ->emptyStateIcon('heroicon-o-newspaper');
     }
 }

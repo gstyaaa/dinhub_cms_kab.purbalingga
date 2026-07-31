@@ -37,12 +37,17 @@ class GalleriesTable
                     ->date('d M Y, H:i'),
             ])
             ->recordActions([
-                EditAction::make(),
+                EditAction::make()
+                    ->label('Ubah'),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
-            ]);
+                    DeleteBulkAction::make()
+                        ->label('Hapus Pilihan'),
+                ])->label('Tindakan Massal'),
+            ])
+            ->emptyStateHeading('Belum Ada Foto Galeri')
+            ->emptyStateDescription('Silakan unggah foto kegiatan dinas perhubungan.')
+            ->emptyStateIcon('heroicon-o-rectangle-stack');
     }
 }

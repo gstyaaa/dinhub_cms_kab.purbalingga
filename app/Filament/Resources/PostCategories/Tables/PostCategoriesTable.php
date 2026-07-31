@@ -37,12 +37,17 @@ TextColumn::make('created_at')
                 //
             ])
             ->recordActions([
-                EditAction::make(),
+                EditAction::make()
+                    ->label('Ubah'),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
-            ]);
+                    DeleteBulkAction::make()
+                        ->label('Hapus Pilihan'),
+                ])->label('Tindakan Massal'),
+            ])
+            ->emptyStateHeading('Belum Ada Kategori')
+            ->emptyStateDescription('Silakan buat kategori berita baru.')
+            ->emptyStateIcon('heroicon-o-folder');
     }
 }

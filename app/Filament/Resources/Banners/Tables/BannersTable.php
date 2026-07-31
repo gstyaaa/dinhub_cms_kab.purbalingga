@@ -49,12 +49,17 @@ class BannersTable
 
             ])
             ->recordActions([
-                EditAction::make(),
+                EditAction::make()
+                    ->label('Ubah'),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
-            ]);
+                    DeleteBulkAction::make()
+                        ->label('Hapus Pilihan'),
+                ])->label('Tindakan Massal'),
+            ])
+            ->emptyStateHeading('Belum Ada Banner Hero')
+            ->emptyStateDescription('Silakan unggah gambar banner hero untuk slider homepage.')
+            ->emptyStateIcon('heroicon-o-photo');
     }
 }

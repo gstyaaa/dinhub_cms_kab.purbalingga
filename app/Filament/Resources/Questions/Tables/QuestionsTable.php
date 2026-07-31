@@ -110,6 +110,9 @@ class QuestionsTable
                             ->info()
                             ->send();
                     }),
-            ]);
+            ])
+            ->emptyStateHeading('Belum Ada Pertanyaan Masuk')
+            ->emptyStateDescription('Pertanyaan dari masyarakat melalui fitur Tanya Dinhub akan tampil di sini.')
+            ->emptyStateIcon('heroicon-o-chat-bubble-left-right');
     }
 }

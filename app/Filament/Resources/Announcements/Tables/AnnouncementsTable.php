@@ -41,12 +41,17 @@ class AnnouncementsTable
                 //
             ])
             ->recordActions([
-                EditAction::make(),
+                EditAction::make()
+                    ->label('Ubah'),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
-            ]);
+                    DeleteBulkAction::make()
+                        ->label('Hapus Pilihan'),
+                ])->label('Tindakan Massal'),
+            ])
+            ->emptyStateHeading('Belum Ada Pengumuman')
+            ->emptyStateDescription('Silakan buat pengumuman baru untuk ditampilkan pada running text homepage.')
+            ->emptyStateIcon('heroicon-o-megaphone');
     }
 }
