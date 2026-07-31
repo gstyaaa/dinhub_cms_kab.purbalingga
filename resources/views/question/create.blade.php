@@ -27,33 +27,58 @@
             </p>
         </div>
 
-        @if(session('success'))
-            <div class="alert alert-success border-0 shadow-sm rounded-4 mb-4 p-4">
-                <div class="d-flex align-items-start">
-                    <i class="bi bi-check-circle-fill fs-3 text-success me-3 flex-shrink-0 mt-1"></i>
-                    <div>
-                        <h5 class="mb-2 fw-bold text-success">
-                            Pertanyaan Berhasil Dikirim
-                        </h5>
-                        <p class="mb-0 text-secondary">
-                            {{ session('success') }}
-                        </p>
-                    </div>
-                </div>
-            </div>
-        @endif
+        {{-- POP-UP RECTANGLE MODAL NOTIFIKASI --}}
+        @if(session('success') || session('error'))
+            <div class="modal fade" id="statusModal" tabindex="-1" aria-labelledby="statusModalLabel" aria-hidden="true" data-bs-backdrop="static">
+                <div class="modal-dialog modal-dialog-centered" style="max-width: 480px;">
+                    <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+                        <div class="modal-header border-0 pb-0 pt-4 px-4 d-flex justify-content-between align-items-center">
+                            <span class="badge {{ session('success') ? 'bg-primary-subtle text-primary border border-primary-subtle' : 'bg-danger-subtle text-danger border border-danger-subtle' }} rounded-pill px-3 py-1.5 fw-bold small">
+                                {{ session('success') ? 'PESAN TERKIRIM' : 'NOTIFIKASI' }}
+                            </span>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        
+                        <div class="modal-body text-center p-4 p-md-5">
+                            @if(session('success'))
+                                <div class="mb-4 d-inline-flex align-items-center justify-content-center bg-success bg-opacity-10 text-success rounded-circle shadow-sm" style="width: 80px; height: 80px;">
+                                    <i class="bi bi-check-circle-fill display-4"></i>
+                                </div>
 
-        @if(session('error'))
-            <div class="alert alert-danger border-0 shadow-sm rounded-4 mb-4 p-4">
-                <div class="d-flex align-items-start">
-                    <i class="bi bi-exclamation-triangle-fill fs-3 text-danger me-3 flex-shrink-0 mt-1"></i>
-                    <div>
-                        <h5 class="mb-2 fw-bold text-danger">
-                            Batas Pengiriman Terlampaui
-                        </h5>
-                        <p class="mb-0 text-secondary">
-                            {{ session('error') }}
-                        </p>
+                                <h4 class="fw-bold text-dark mb-2" id="statusModalLabel">Pertanyaan Berhasil Dikirim!</h4>
+                                
+                                <p class="text-muted small mb-4 lh-base" style="font-size: 0.925rem;">
+                                    {{ session('success') }}
+                                </p>
+
+                                <div class="bg-light rounded-4 p-3 mb-4 text-start border border-secondary border-opacity-10">
+                                    <div class="d-flex align-items-center gap-2 text-primary fw-bold small mb-1">
+                                        <i class="bi bi-info-circle-fill me-1"></i> Informasi Selanjutnya
+                                    </div>
+                                    <div class="text-secondary small leading-relaxed" style="font-size: 0.825rem;">
+                                        Tanggapan resmi dari tim Dinhub Purbalingga akan dikirimkan ke kontak Anda dan dapat dipublikasikan setelah peninjauan admin.
+                                    </div>
+                                </div>
+
+                                <button type="button" class="btn btn-primary rounded-pill px-4 py-2.5 fw-semibold shadow-sm w-100" data-bs-dismiss="modal">
+                                    <i class="bi bi-check2-circle me-1"></i> Oke, Mengerti
+                                </button>
+                            @else
+                                <div class="mb-4 d-inline-flex align-items-center justify-content-center bg-danger bg-opacity-10 text-danger rounded-circle shadow-sm" style="width: 80px; height: 80px;">
+                                    <i class="bi bi-exclamation-triangle-fill display-4"></i>
+                                </div>
+
+                                <h4 class="fw-bold text-dark mb-2" id="statusModalLabel">Batas Pengiriman Terlampaui</h4>
+                                
+                                <p class="text-muted small mb-4 lh-base" style="font-size: 0.925rem;">
+                                    {{ session('error') }}
+                                </p>
+
+                                <button type="button" class="btn btn-secondary rounded-pill px-4 py-2.5 fw-semibold shadow-sm w-100" data-bs-dismiss="modal">
+                                    Tutup
+                                </button>
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>
@@ -294,6 +319,13 @@
         const btnLoading = document.getElementById("btnLoading");
         const messageInput = document.getElementById("message");
         const charCount = document.getElementById("charCount");
+
+        // Auto show status modal if exists
+        const statusModalEl = document.getElementById("statusModal");
+        if (statusModalEl) {
+            const statusModal = new bootstrap.Modal(statusModalEl);
+            statusModal.show();
+        }
 
         // Live character counter
         if (messageInput && charCount) {
