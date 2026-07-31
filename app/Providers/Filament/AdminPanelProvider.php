@@ -28,7 +28,7 @@ class AdminPanelProvider extends PanelProvider
             ->login(\App\Filament\Pages\Auth\Login::class)
             ->profile()
             ->favicon(asset('images/new-dinhub.png'))
-            ->brandName('Dinhub-cms')
+            ->brandName('Dinhub - Content Management System')
             ->brandLogo(fn () => view('filament.components.brand'))
             ->colors([
                 'primary' => Color::Blue,

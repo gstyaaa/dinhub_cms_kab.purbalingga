@@ -3,5 +3,5 @@
          alt="Logo Dinhub Purbalingga"
          style="height: 32px !important; width: auto !important; max-height: 32px !important; display: inline-block !important; flex-shrink: 0 !important;"
          height="32">
-    <span style="font-weight: 700 !important; font-size: 1.15rem !important; display: inline-block !important;" class="text-gray-900 dark:text-white">Dinhub-cms</span>
+    <span style="font-weight: 700 !important; font-size: 1.05rem !important; display: inline-block !important;" class="text-gray-900 dark:text-white">Dinhub - Content Management System</span>
 </div>

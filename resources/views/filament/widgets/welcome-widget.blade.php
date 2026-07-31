@@ -8,7 +8,7 @@
                 </div>
 
                 <h2 style="font-size: 1.65rem; font-weight: 800; margin: 0 0 0.5rem 0; color: #ffffff; line-height: 1.2;">
-                    Selamat Datang, {{ auth()->user()->name ?? 'Admin' }}! 👋
+                    Selamat Datang, {{ auth()->user()->name ?? 'Admin' }}!
                 </h2>
 
                 <p style="margin: 0; font-size: 0.875rem; opacity: 0.92; max-width: 620px; line-height: 1.5; color: #e2e8f0;">

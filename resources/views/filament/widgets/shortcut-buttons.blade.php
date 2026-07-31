@@ -3,52 +3,52 @@
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.85rem; margin-top: 0.5rem;">
             {{-- Tulis Berita --}}
             <a href="{{ url('/admin/posts/create') }}" 
-               style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.1rem 0.5rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 0.75rem; text-decoration: none; text-align: center; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); transition: border-color 0.2s ease;">
-                <div style="width: 42px; height: 42px; background: #eff6ff; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; font-size: 1.35rem; margin-bottom: 0.5rem;">
+               class="flex flex-col items-center justify-center p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl text-center shadow-sm hover:border-primary-500 dark:hover:border-primary-400 transition-all no-underline group">
+                <div class="w-11 h-11 bg-blue-50 dark:bg-blue-950/60 rounded-lg flex items-center justify-center text-xl mb-2 group-hover:scale-105 transition-transform">
                     📝
                 </div>
-                <span style="font-size: 0.8125rem; font-weight: 700; color: #0f172a;">Tulis Berita</span>
-                <span style="font-size: 0.6875rem; color: #64748b; margin-top: 0.15rem;">Artikel / Berita</span>
+                <span class="text-xs font-bold text-gray-900 dark:text-gray-100">Tulis Berita</span>
+                <span class="text-[11px] text-gray-500 dark:text-gray-400 mt-0.5">Artikel / Berita</span>
             </a>
 
             {{-- Buat Pengumuman --}}
             <a href="{{ url('/admin/announcements/create') }}" 
-               style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.1rem 0.5rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 0.75rem; text-decoration: none; text-align: center; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); transition: border-color 0.2s ease;">
-                <div style="width: 42px; height: 42px; background: #fffbeb; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; font-size: 1.35rem; margin-bottom: 0.5rem;">
+               class="flex flex-col items-center justify-center p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl text-center shadow-sm hover:border-primary-500 dark:hover:border-primary-400 transition-all no-underline group">
+                <div class="w-11 h-11 bg-amber-50 dark:bg-amber-950/60 rounded-lg flex items-center justify-center text-xl mb-2 group-hover:scale-105 transition-transform">
                     📢
                 </div>
-                <span style="font-size: 0.8125rem; font-weight: 700; color: #0f172a;">Pengumuman</span>
-                <span style="font-size: 0.6875rem; color: #64748b; margin-top: 0.15rem;">Info Publik</span>
+                <span class="text-xs font-bold text-gray-900 dark:text-gray-100">Pengumuman</span>
+                <span class="text-[11px] text-gray-500 dark:text-gray-400 mt-0.5">Info Publik</span>
             </a>
 
             {{-- Upload Galeri --}}
             <a href="{{ url('/admin/galleries/create') }}" 
-               style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.1rem 0.5rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 0.75rem; text-decoration: none; text-align: center; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); transition: border-color 0.2s ease;">
-                <div style="width: 42px; height: 42px; background: #ecfdf5; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; font-size: 1.35rem; margin-bottom: 0.5rem;">
+               class="flex flex-col items-center justify-center p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl text-center shadow-sm hover:border-primary-500 dark:hover:border-primary-400 transition-all no-underline group">
+                <div class="w-11 h-11 bg-emerald-50 dark:bg-emerald-950/60 rounded-lg flex items-center justify-center text-xl mb-2 group-hover:scale-105 transition-transform">
                     🖼️
                 </div>
-                <span style="font-size: 0.8125rem; font-weight: 700; color: #0f172a;">Upload Galeri</span>
-                <span style="font-size: 0.6875rem; color: #64748b; margin-top: 0.15rem;">Foto Kegiatan</span>
+                <span class="text-xs font-bold text-gray-900 dark:text-gray-100">Upload Galeri</span>
+                <span class="text-[11px] text-gray-500 dark:text-gray-400 mt-0.5">Foto Kegiatan</span>
             </a>
 
             {{-- Tanya Dishub --}}
             <a href="{{ url('/admin/questions') }}" 
-               style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.1rem 0.5rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 0.75rem; text-decoration: none; text-align: center; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); transition: border-color 0.2s ease;">
-                <div style="width: 42px; height: 42px; background: #faf5ff; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; font-size: 1.35rem; margin-bottom: 0.5rem;">
+               class="flex flex-col items-center justify-center p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl text-center shadow-sm hover:border-primary-500 dark:hover:border-primary-400 transition-all no-underline group">
+                <div class="w-11 h-11 bg-purple-50 dark:bg-purple-950/60 rounded-lg flex items-center justify-center text-xl mb-2 group-hover:scale-105 transition-transform">
                     💬
                 </div>
-                <span style="font-size: 0.8125rem; font-weight: 700; color: #0f172a;">Tanya Dishub</span>
-                <span style="font-size: 0.6875rem; color: #64748b; margin-top: 0.15rem;">Aspirasi Warga</span>
+                <span class="text-xs font-bold text-gray-900 dark:text-gray-100">Tanya Dishub</span>
+                <span class="text-[11px] text-gray-500 dark:text-gray-400 mt-0.5">Aspirasi Warga</span>
             </a>
 
             {{-- Pratinjau Web --}}
             <a href="{{ route('home') }}" target="_blank" 
-               style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.1rem 0.5rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 0.75rem; text-decoration: none; text-align: center; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); transition: border-color 0.2s ease;">
-                <div style="width: 42px; height: 42px; background: #ecfeff; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; font-size: 1.35rem; margin-bottom: 0.5rem;">
+               class="flex flex-col items-center justify-center p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl text-center shadow-sm hover:border-primary-500 dark:hover:border-primary-400 transition-all no-underline group">
+                <div class="w-11 h-11 bg-cyan-50 dark:bg-cyan-950/60 rounded-lg flex items-center justify-center text-xl mb-2 group-hover:scale-105 transition-transform">
                     🌐
                 </div>
-                <span style="font-size: 0.8125rem; font-weight: 700; color: #0f172a;">Lihat Website</span>
-                <span style="font-size: 0.6875rem; color: #64748b; margin-top: 0.15rem;">Halaman Publik</span>
+                <span class="text-xs font-bold text-gray-900 dark:text-gray-100">Lihat Website</span>
+                <span class="text-[11px] text-gray-500 dark:text-gray-400 mt-0.5">Halaman Publik</span>
             </a>
         </div>
     </x-filament::section>

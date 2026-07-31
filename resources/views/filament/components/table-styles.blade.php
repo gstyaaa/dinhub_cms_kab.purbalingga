@@ -1,6 +1,6 @@
 <style>
     /* =========================================================
-       CUSTOM BLUE LIST ACCENT FOR ALL FILAMENT ADMIN TABLES
+       CUSTOM BLUE ACCENT & HIGH CONTRAST DARK MODE FOR FILAMENT
        ========================================================= */
 
     /* Top Blue Accent Bar & Soft Shadow on Table Containers */
@@ -14,7 +14,7 @@
         overflow: hidden !important;
     }
 
-    /* Table Header Blue Tint & Bottom Border */
+    /* Table Header Blue Tint & Bottom Border - Light Mode */
     .fi-ta-header-cell,
     th.fi-ta-header-cell {
         background-color: rgba(13, 110, 253, 0.05) !important;
@@ -46,4 +46,53 @@
     .fi-ta-row:nth-child(even) {
         background-color: rgba(248, 250, 252, 0.5);
     }
+
+    /* =========================================================
+       DARK MODE HIGH CONTRAST & LEGIBILITY FIXES
+       ========================================================= */
+
+    html.dark .fi-ta-header-cell,
+    html.dark th.fi-ta-header-cell {
+        background-color: rgba(15, 23, 42, 0.95) !important;
+        border-bottom: 2px solid rgba(59, 130, 246, 0.3) !important;
+    }
+
+    html.dark .fi-ta-header-cell-label {
+        color: #60a5fa !important; /* Soft bright blue for dark mode */
+        font-weight: 700 !important;
+    }
+
+    html.dark .fi-ta-row:nth-child(even) {
+        background-color: rgba(30, 41, 59, 0.35) !important;
+    }
+
+    html.dark .fi-ta-row:hover {
+        background-color: rgba(30, 58, 138, 0.3) !important;
+        box-shadow: inset 4px 0 0 #3b82f6 !important;
+    }
+
+    html.dark .fi-ta-header-ctn {
+        background-color: rgba(15, 23, 42, 0.8) !important;
+        border-bottom: 1px solid rgba(59, 130, 246, 0.2) !important;
+    }
+
+    /* Input & Textarea High Contrast in Dark Mode */
+    html.dark .fi-fo-text-input input,
+    html.dark .fi-fo-textarea textarea,
+    html.dark .fi-fo-select select {
+        color: #f8fafc !important;
+    }
+
+    /* Section & Card Description Text Legibility */
+    html.dark .fi-section-header-description,
+    html.dark .fi-header-subheading,
+    html.dark .fi-ta-empty-state-description {
+        color: #94a3b8 !important;
+    }
+
+    /* Table Cell High Contrast Text */
+    html.dark .fi-ta-text-item-label {
+        color: #f1f5f9 !important;
+    }
 </style>
+
