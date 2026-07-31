@@ -1,58 +1,99 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# CMS Dinas Perhubungan Kabupaten Purbalingga 🚍
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Sistem Manajemen Konten (CMS) dan Portal Informasi Resmi Dinas Perhubungan Kabupaten Purbalingga dibangun menggunakan **Laravel 11** & **Filament v3**.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🛠️ Persyaratan Sistem (System Requirements)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Di ekosistem PHP/Laravel, daftar dependency dikelola secara otomatis oleh `composer.json` dan `package.json` (bukan `requirements.txt` seperti di Python).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Pastikan perangkat/server kamu telah terpasang:
+- **PHP**: `>= 8.2` (Ekstensi wajib: `pdo`, `mbstring`, `openssl`, `fileinfo`, `gd` / `imagick`)
+- **Database**: MySQL `>= 8.0` atau MariaDB `>= 10.4`
+- **Composer**: `>= 2.5`
+- **Node.js**: `>= 18.x` & **npm** `>= 9.x`
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🚀 Panduan Instalasi & Memulai (Quick Start)
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Ikuti langkah-langkah berikut untuk menjalankan proyek di komputer baru / lokal:
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
+### 1. Clone Repository & Masuk Folder
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone https://github.com/gstyaaa/dinhub_cms_kab.purbalingga.git
+cd dinhub_cms
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 2. Install Dependency PHP & Node.js
+```bash
+composer install
+npm install
+```
 
-## Contributing
+### 3. Konfigurasi Environment (`.env`)
+Salin berkas `.env.example` menjadi `.env`:
+```bash
+cp .env.example .env
+```
+Buka berkas `.env` lalu sesuaikan konfigurasi database:
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=dishub_cms
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 4. Generate App Key & Jalankan Migration
+```bash
+php artisan key:generate
+php artisan migrate --seed
+php artisan storage:link
+```
 
-## Code of Conduct
+### 5. Jalankan Server Lokal
+Jalankan server Laravel dan kompiler asset di dua terminal terpisah:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+**Terminal 1 (Laravel Server):**
+```bash
+php artisan serve
+```
 
-## Security Vulnerabilities
+**Terminal 2 (Assets Builder):**
+```bash
+npm run dev
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Aplikasi dapat diakses di browser melalui alamat:
+- **Portal Publik**: `http://127.0.0.1:8000`
+- **Panel Administrator**: `http://127.0.0.1:8000/admin`
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 💻 Fitur Utama Aplikasi
+
+- 🏠 **Beranda & Banner Slider**: Banner spanduk utama dinamis dapat diubah dari Admin Panel.
+- 📰 **Berita & Pengumuman**: Publikasi artikel berita dan pengumuman instansi lengkap dengan kategori.
+- 💬 **Tanya Dinhub (Aspirasi Warga)**: Layanan permohonan informasi/pengaduan warga dengan notifikasi *pop-up modal* terintegrasi.
+- 🏛️ **Profil Instansi & PPID**: Visi Misi, Tugas Fungsi, serta Bagan Organisasi & PPID Pelaksana berbasis HTML/CSS interaktif.
+- 🖼️ **Galeri Dokumentasi**: Galeri foto kegiatan instansi.
+- 📊 **Statistik Pengunjung**: Pencatatan pengunjung harian, bulanan, dan total secara otomatis berbasis enkripsi SHA-256 IP.
+
+---
+
+## 🔐 Kredensial Administrator Default
+
+Setelah menjalankan `php artisan db:seed`, kamu dapat login ke admin panel menggunakan:
+- **URL Login**: `http://127.0.0.1:8000/admin/login`
+- **Email**: `admin@purbalinggakab.go.id`
+- **Password**: `password` *(Harap ganti password setelah pertama kali login)*
+
+---
+
+## 📄 Lisensi
+
+Hak Cipta © 2026 **Dinas Perhubungan Kabupaten Purbalingga**. Seluruh Hak Cipta Dilindungi.
+
