@@ -1,7 +1,7 @@
 <section class="hero-fullwidth-section position-relative overflow-hidden border-bottom" style="min-height: 520px; background-color: #030812;">
 
     {{-- 1. FULL WIDTH BACKGROUND IMAGE SLIDER --}}
-    <div id="heroBgCarousel" class="carousel slide carousel-fade position-absolute top-0 start-0 w-100 h-100" data-bs-ride="carousel" data-bs-interval="4500" style="z-index: 1;">
+    <div id="heroBgCarousel" class="carousel slide carousel-fade position-absolute top-0 start-0 w-100 h-100" data-bs-ride="carousel" data-bs-interval="3000" style="z-index: 1;">
         <div class="carousel-inner h-100">
             @if($banners->isNotEmpty())
                 @foreach($banners as $banner)
@@ -66,3 +66,19 @@
     </div>
 
 </section>
+
+@push('scripts')
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const heroCarouselEl = document.getElementById("heroBgCarousel");
+        if (heroCarouselEl && typeof bootstrap !== "undefined") {
+            const carousel = new bootstrap.Carousel(heroCarouselEl, {
+                interval: 3000,
+                ride: 'carousel',
+                touch: true
+            });
+            carousel.cycle();
+        }
+    });
+</script>
+@endpush
