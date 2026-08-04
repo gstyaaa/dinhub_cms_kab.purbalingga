@@ -4,6 +4,7 @@ namespace App\Filament\Resources\Questions\Tables;
 
 use App\Models\Question;
 use Filament\Actions\Action;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\ViewAction;
 use Filament\Notifications\Notification;
 use Filament\Tables\Columns\IconColumn;
@@ -61,7 +62,7 @@ class QuestionsTable
                     ->label('Detail'),
 
                 Action::make('send_email')
-                    ->label('Email')
+                    ->label('Balas via Email')
                     ->icon('heroicon-o-envelope')
                     ->color('primary')
                     ->url(fn (Question $record): string => "mailto:{$record->email}?subject=" . rawurlencode("Re: {$record->subject}"))
@@ -110,6 +111,12 @@ class QuestionsTable
                             ->info()
                             ->send();
                     }),
+
+                DeleteAction::make()
+                    ->label('Hapus')
+                    ->modalHeading('Konfirmasi Hapus Pertanyaan')
+                    ->modalDescription('Apakah Anda yakin ingin menghapus pertanyaan ini? Tindakan ini tidak dapat dibatalkan.')
+                    ->modalSubmitActionLabel('Ya, Hapus'),
             ])
             ->emptyStateHeading('Belum Ada Pertanyaan Masuk')
             ->emptyStateDescription('Pertanyaan dari masyarakat melalui fitur Tanya Dinhub akan tampil di sini.')

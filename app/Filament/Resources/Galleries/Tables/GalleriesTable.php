@@ -2,8 +2,7 @@
 
 namespace App\Filament\Resources\Galleries\Tables;
 
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
@@ -39,12 +38,11 @@ class GalleriesTable
             ->recordActions([
                 EditAction::make()
                     ->label('Ubah'),
-            ])
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make()
-                        ->label('Hapus Pilihan'),
-                ])->label('Tindakan Massal'),
+                DeleteAction::make()
+                    ->label('Hapus')
+                    ->modalHeading('Konfirmasi Hapus Galeri')
+                    ->modalDescription('Apakah Anda yakin ingin menghapus foto galeri ini? Tindakan ini tidak dapat dibatalkan.')
+                    ->modalSubmitActionLabel('Ya, Hapus'),
             ])
             ->emptyStateHeading('Belum Ada Foto Galeri')
             ->emptyStateDescription('Silakan unggah foto kegiatan dinas perhubungan.')

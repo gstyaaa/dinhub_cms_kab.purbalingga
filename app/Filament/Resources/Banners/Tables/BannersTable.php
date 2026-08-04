@@ -2,8 +2,7 @@
 
 namespace App\Filament\Resources\Banners\Tables;
 
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
@@ -48,12 +47,11 @@ class BannersTable
             ->recordActions([
                 EditAction::make()
                     ->label('Ubah'),
-            ])
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make()
-                        ->label('Hapus Pilihan'),
-                ])->label('Tindakan Massal'),
+                DeleteAction::make()
+                    ->label('Hapus')
+                    ->modalHeading('Konfirmasi Hapus Banner')
+                    ->modalDescription('Apakah Anda yakin ingin menghapus banner ini? Tindakan ini tidak dapat dibatalkan.')
+                    ->modalSubmitActionLabel('Ya, Hapus'),
             ])
             ->emptyStateHeading('Belum Ada Banner')
             ->emptyStateDescription('Silakan unggah gambar banner untuk slider di halaman depan.')

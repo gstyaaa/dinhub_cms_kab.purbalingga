@@ -2,11 +2,8 @@
 
 namespace App\Filament\Resources\Posts\Tables;
 
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
-use Filament\Actions\ForceDeleteBulkAction;
-use Filament\Actions\RestoreBulkAction;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
@@ -80,17 +77,11 @@ class PostsTable
             ->recordActions([
                 EditAction::make()
                     ->label('Ubah'),
-            ])
-
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make()
-                        ->label('Hapus Pilihan'),
-                    ForceDeleteBulkAction::make()
-                        ->label('Hapus Permanen'),
-                    RestoreBulkAction::make()
-                        ->label('Pulihkan Pilihan'),
-                ])->label('Tindakan Massal'),
+                DeleteAction::make()
+                    ->label('Hapus')
+                    ->modalHeading('Konfirmasi Hapus Berita')
+                    ->modalDescription('Apakah Anda yakin ingin menghapus berita ini? Tindakan ini tidak dapat dibatalkan.')
+                    ->modalSubmitActionLabel('Ya, Hapus'),
             ])
             ->defaultSort('created_at', 'desc')
             ->emptyStateHeading('Belum Ada Berita')
