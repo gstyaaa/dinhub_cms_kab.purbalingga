@@ -179,28 +179,28 @@
                                 </span>
                                 <i class="bi bi-chevron-down text-secondary fs-6 dropdown-chevron-icon"></i>
                             </summary>
-                            <ul class="list-unstyled ps-3 my-2 d-flex flex-column gap-1.5">
+                            <ul class="list-unstyled ps-2 my-2 d-flex flex-column gap-1">
                                 <li>
-                                    <a class="dropdown-item py-2.5 d-flex align-items-center gap-3 {{ request()->routeIs('profile.about') ? 'active' : '' }}" href="{{ route('profile.about') }}">
-                                        <i class="bi bi-info-circle text-primary fs-6"></i>
+                                    <a class="dropdown-item py-2.5 d-flex align-items-center gap-3 text-wrap {{ request()->routeIs('profile.about') ? 'active' : '' }}" href="{{ route('profile.about') }}">
+                                        <i class="bi bi-info-circle text-primary fs-6 shrink-0"></i>
                                         <span>Tentang Dinas</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item py-2.5 d-flex align-items-center gap-3 {{ request()->routeIs('profile.vision-mission') ? 'active' : '' }}" href="{{ route('profile.vision-mission') }}">
-                                        <i class="bi bi-compass text-primary fs-6"></i>
+                                    <a class="dropdown-item py-2.5 d-flex align-items-center gap-3 text-wrap {{ request()->routeIs('profile.vision-mission') ? 'active' : '' }}" href="{{ route('profile.vision-mission') }}">
+                                        <i class="bi bi-compass text-primary fs-6 shrink-0"></i>
                                         <span>Visi & Misi</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item py-2.5 d-flex align-items-center gap-3 {{ request()->routeIs('profile.duties') ? 'active' : '' }}" href="{{ route('profile.duties') }}">
-                                        <i class="bi bi-list-check text-primary fs-6"></i>
+                                    <a class="dropdown-item py-2.5 d-flex align-items-center gap-3 text-wrap {{ request()->routeIs('profile.duties') ? 'active' : '' }}" href="{{ route('profile.duties') }}">
+                                        <i class="bi bi-list-check text-primary fs-6 shrink-0"></i>
                                         <span>Tugas Pokok & Fungsi</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item py-2.5 d-flex align-items-center gap-3 {{ request()->routeIs('profile.organization') ? 'active' : '' }}" href="{{ route('profile.organization') }}">
-                                        <i class="bi bi-diagram-3 text-primary fs-6"></i>
+                                    <a class="dropdown-item py-2.5 d-flex align-items-center gap-3 text-wrap {{ request()->routeIs('profile.organization') ? 'active' : '' }}" href="{{ route('profile.organization') }}">
+                                        <i class="bi bi-diagram-3 text-primary fs-6 shrink-0"></i>
                                         <span>Struktur Organisasi</span>
                                     </a>
                                 </li>
@@ -218,28 +218,28 @@
                                 </span>
                                 <i class="bi bi-chevron-down text-secondary fs-6 dropdown-chevron-icon"></i>
                             </summary>
-                            <ul class="list-unstyled ps-3 my-2 d-flex flex-column gap-1.5">
+                            <ul class="list-unstyled ps-2 my-2 d-flex flex-column gap-1">
                                 <li>
-                                    <a class="dropdown-item py-2.5 d-flex align-items-center gap-3 {{ request()->routeIs('ppid.index') ? 'active' : '' }}" href="{{ route('ppid.index') }}">
-                                        <i class="bi bi-person-badge text-primary fs-6"></i>
+                                    <a class="dropdown-item py-2.5 d-flex align-items-center gap-3 text-wrap {{ request()->routeIs('ppid.index') ? 'active' : '' }}" href="{{ route('ppid.index') }}">
+                                        <i class="bi bi-person-badge text-primary fs-6 shrink-0"></i>
                                         <span>Profil PPID</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item py-2.5 d-flex align-items-center gap-3 {{ request()->routeIs('ppid.program') ? 'active' : '' }}" href="{{ route('ppid.program') }}">
-                                        <i class="bi bi-calendar-event text-primary fs-6"></i>
+                                    <a class="dropdown-item py-2.5 d-flex align-items-center gap-3 text-wrap {{ request()->routeIs('ppid.program') ? 'active' : '' }}" href="{{ route('ppid.program') }}">
+                                        <i class="bi bi-calendar-event text-primary fs-6 shrink-0"></i>
                                         <span>Program & Kegiatan</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item py-2.5 d-flex align-items-center gap-3 {{ request()->routeIs('ppid.sakip') ? 'active' : '' }}" href="{{ route('ppid.sakip') }}">
-                                        <i class="bi bi-journal-text text-primary fs-6"></i>
+                                    <a class="dropdown-item py-2.5 d-flex align-items-center gap-3 text-wrap {{ request()->routeIs('ppid.sakip') ? 'active' : '' }}" href="{{ route('ppid.sakip') }}">
+                                        <i class="bi bi-journal-text text-primary fs-6 shrink-0"></i>
                                         <span>SAKIP</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item py-2.5 d-flex align-items-center gap-3 {{ request()->routeIs('ppid.peraturan') ? 'active' : '' }}" href="{{ route('ppid.peraturan') }}">
-                                        <i class="bi bi-file-earmark-text text-primary fs-6"></i>
+                                    <a class="dropdown-item py-2.5 d-flex align-items-center gap-3 text-wrap {{ request()->routeIs('ppid.peraturan') ? 'active' : '' }}" href="{{ route('ppid.peraturan') }}">
+                                        <i class="bi bi-file-earmark-text text-primary fs-6 shrink-0"></i>
                                         <span>Peraturan</span>
                                     </a>
                                 </li>

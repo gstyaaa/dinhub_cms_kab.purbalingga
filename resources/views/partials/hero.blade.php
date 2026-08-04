@@ -50,15 +50,15 @@
                     masyarakat Kabupaten Purbalingga.
                 </p>
 
-                <div class="d-flex flex-column flex-sm-row gap-2.5 mt-4">
+                <div class="d-flex flex-column flex-sm-row align-items-stretch align-items-sm-center gap-3 gap-sm-4 mt-4 pt-2">
                     <a href="#welcome"
-                       class="btn btn-primary px-4 py-2.5 rounded-pill fw-semibold">
-                        <i class="bi bi-info-circle me-1"></i> Pelajari Lebih Lanjut
+                       class="btn btn-primary px-4 py-2.5 rounded-pill fw-semibold shadow-sm">
+                        <i class="bi bi-info-circle me-1.5"></i> Pelajari Lebih Lanjut
                     </a>
 
                     <a href="#footer"
                        class="btn btn-outline-light px-4 py-2.5 rounded-pill fw-semibold">
-                        <i class="bi bi-telephone me-1"></i> Hubungi Kami
+                        <i class="bi bi-telephone me-1.5"></i> Hubungi Kami
                     </a>
                 </div>
             </div>

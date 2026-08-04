@@ -432,6 +432,26 @@
             }
         }
 
+        /* Mobile Submenu Link Touch & Active Micro Animation */
+        .offcanvas .dropdown-item,
+        .offcanvas .nav-link {
+            transition: all 0.25s ease-in-out !important;
+            border-radius: 0.5rem !important;
+        }
+
+        .offcanvas .dropdown-item:active,
+        .offcanvas .dropdown-item:hover {
+            background-color: rgba(13, 110, 253, 0.08) !important;
+            color: #0d6efd !important;
+            padding-left: 0.75rem !important;
+        }
+
+        .offcanvas .dropdown-item:hover i,
+        .offcanvas .dropdown-item:active i {
+            transform: translateX(3px) scale(1.1);
+            transition: transform 0.2s ease !important;
+        }
+
         /* Default State for All Dropdown Arrows: Points DOWN (v) */
         .dropdown-chevron-icon {
             transform: rotate(0deg) !important;
@@ -566,14 +586,52 @@
             }
         }
 
+        /* Sticky Navbar Mobile Unclipped & Constant Height Fix */
+        .navbar.sticky-top {
+            position: sticky !important;
+            top: 0 !important;
+            z-index: 1030 !important;
+            overflow: visible !important;
+            min-height: 56px;
+        }
+
+        .navbar-brand {
+            display: inline-flex !important;
+            align-items: center !important;
+            white-space: nowrap !important;
+            line-height: 1.2 !important;
+            padding-top: 2px !important;
+            padding-bottom: 2px !important;
+            overflow: visible !important;
+        }
+
+        .navbar-brand img {
+            flex-shrink: 0 !important;
+            max-height: 42px !important;
+            width: auto !important;
+            display: block !important;
+        }
+
+        .navbar-brand span {
+            display: inline-block !important;
+            line-height: 1.2 !important;
+            white-space: nowrap !important;
+            margin: 0 !important;
+        }
+
         @media (max-width: 575.98px) {
-            /* Compact Header Logo & Running Text on Small Phones */
+            /* Compact Header Logo & Navbar Height on Mobile */
+            .navbar.sticky-top {
+                min-height: 60px !important;
+            }
+
             .navbar-brand {
                 font-size: 0.825rem !important;
                 gap: 0.4rem !important;
             }
 
             .navbar-brand img {
+                max-height: 34px !important;
                 height: 34px !important;
             }
 
