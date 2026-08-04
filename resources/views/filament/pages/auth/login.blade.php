@@ -44,6 +44,73 @@
             color: #ffffff;
         }
 
+        /* Right Login Panel: Clean White with Crisp Dark Text & Inputs */
+        .right-login-panel-white {
+            background-color: #ffffff !important;
+            color: #0f172a !important;
+        }
+
+        .right-login-panel-white label,
+        .right-login-panel-white .fi-fo-field-wrp-label,
+        .right-login-panel-white .fi-fo-field-wrp-label span,
+        .right-login-panel-white label span {
+            color: #0f172a !important;
+            font-weight: 600 !important;
+            font-size: 0.9rem !important;
+            margin-bottom: 0.35rem !important;
+            display: inline-block !important;
+        }
+
+        .right-login-panel-white input,
+        .right-login-panel-white input[type="email"],
+        .right-login-panel-white input[type="password"],
+        .right-login-panel-white input[type="text"],
+        .right-login-panel-white .fi-input,
+        .right-login-panel-white .fi-input-wrp input {
+            background-color: #ffffff !important;
+            color: #0f172a !important;
+            -webkit-text-fill-color: #0f172a !important;
+            border: 1px solid #cbd5e1 !important;
+            border-radius: 0.5rem !important;
+        }
+
+        .right-login-panel-white .fi-input-wrp {
+            background-color: #ffffff !important;
+            border: 1px solid #cbd5e1 !important;
+            border-radius: 0.5rem !important;
+        }
+
+        /* Fix Chrome/Edge/Firefox Autofill and typed text color */
+        .right-login-panel-white input:-webkit-autofill,
+        .right-login-panel-white input:-webkit-autofill:hover,
+        .right-login-panel-white input:-webkit-autofill:focus,
+        .right-login-panel-white input:-webkit-autofill:active {
+            -webkit-text-fill-color: #0f172a !important;
+            -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+
+        .right-login-panel-white input::placeholder {
+            color: #64748b !important;
+            -webkit-text-fill-color: #64748b !important;
+        }
+
+        .right-login-panel-white input:focus,
+        .right-login-panel-white .fi-input-wrp:focus-within {
+            border-color: #0d6efd !important;
+            box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25) !important;
+        }
+
+        .right-login-panel-white .fi-checkbox-input {
+            background-color: #ffffff !important;
+            border: 1px solid #94a3b8 !important;
+        }
+
+        .right-login-panel-white .fi-checkbox-input:checked {
+            background-color: #0d6efd !important;
+            border-color: #0d6efd !important;
+        }
+
         .glow-logo {
             filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
             max-height: 75px !important;
@@ -138,7 +205,7 @@
                 </div>
 
                 {{-- RIGHT COLUMN: LOGIN FORM --}}
-                <div class="col-lg-7 bg-white p-4 p-md-5 d-flex flex-column justify-content-center">
+                <div class="col-lg-7 right-login-panel-white p-4 p-md-5 d-flex flex-column justify-content-center">
                     <div class="mb-4">
                         <div class="d-flex align-items-center gap-2 mb-2">
                             <i class="bi bi-shield-lock-fill text-primary fs-3"></i>

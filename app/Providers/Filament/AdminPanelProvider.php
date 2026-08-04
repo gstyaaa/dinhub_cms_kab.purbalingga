@@ -45,7 +45,6 @@ class AdminPanelProvider extends PanelProvider
             ->widgets([
                 \App\Filament\Widgets\WelcomeWidget::class,
                 \App\Filament\Widgets\StatsOverview::class,
-                \App\Filament\Widgets\ShortcutButtons::class,
                 \App\Filament\Widgets\LatestPosts::class,
             ])
             ->middleware([

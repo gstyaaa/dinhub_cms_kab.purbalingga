@@ -19,7 +19,7 @@
             <div style="display: flex; gap: 0.75rem; flex-shrink: 0;">
                 <a href="{{ route('home') }}" target="_blank" 
                    style="display: inline-flex; align-items: center; gap: 0.5rem; background: #ffffff; color: #1e3a8a; font-weight: 700; font-size: 0.875rem; padding: 0.65rem 1.25rem; border-radius: 0.5rem; text-decoration: none; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
-                    <span>🌐 Pratinjau Web Utama</span>
+                    <span>🌐 Lihat Web</span>
                 </a>
             </div>
         </div>

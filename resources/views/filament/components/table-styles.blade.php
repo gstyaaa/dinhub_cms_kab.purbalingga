@@ -3,11 +3,12 @@
        CUSTOM BLUE ACCENT & HIGH CONTRAST DARK MODE FOR FILAMENT
        ========================================================= */
 
-    /* Top Blue Accent Bar & Soft Shadow on Table Containers */
+    /* Top Blue Accent Bar & Soft Shadow on Table Containers & Section Cards */
     .fi-ta-ctn,
     .fi-ta-content,
     div.fi-ta-ctn,
-    div.fi-ta-content {
+    div.fi-ta-content,
+    .kadis-card-container {
         border-top: 4px solid #0d6efd !important;
         box-shadow: 0 4px 18px rgba(13, 110, 253, 0.09) !important;
         border-radius: 0.75rem !important;
@@ -93,6 +94,33 @@
     /* Table Cell High Contrast Text */
     html.dark .fi-ta-text-item-label {
         color: #f1f5f9 !important;
+    }
+
+    /* Portrait Photo Frame Aspect Ratio & Centered Text for FileUpload */
+    .fi-fo-file-upload .filepond--root,
+    .fi-fo-file-upload .fi-fo-file-upload-dropzone {
+        aspect-ratio: 3 / 4 !important;
+        max-height: 260px !important;
+        border-radius: 0.75rem !important;
+    }
+
+    .fi-fo-file-upload .filepond--drop-label,
+    .fi-fo-file-upload .fi-fo-file-upload-dropzone-content {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        height: 100% !important;
+        min-height: 100% !important;
+    }
+
+    .fi-fo-file-upload .filepond--drop-label label,
+    .fi-fo-file-upload .filepond--label-action {
+        text-align: center !important;
+        margin: auto !important;
+        display: block !important;
+        width: 100% !important;
     }
 </style>
 
