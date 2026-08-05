@@ -9,6 +9,10 @@
 
     <link rel="icon" href="{{ asset(config('dishub.logo', 'images/new-dinhub.png')) }}">
 
+    <!-- Preconnect & Fast DNS Resolution for CDN -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
     <!-- Bootstrap 5 CSS & Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -16,6 +20,38 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <style>
+        .floating-minhub {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            z-index: 1080;
+            display: block;
+        }
+
+        .floating-minhub img {
+            width: 100px;
+            height: 100px;
+            display: block;
+            filter: drop-shadow(0 10px 24px rgba(0, 0, 0, .3));
+            transition: transform .2s ease;
+        }
+
+        .floating-minhub:hover img {
+            transform: scale(1.08);
+        }
+
+        @media (max-width: 768px) {
+            .floating-minhub {
+                right: 16px;
+                bottom: 16px;
+            }
+
+            .floating-minhub img {
+                width: 78px;
+                height: 78px;
+            }
+        }
+
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
@@ -657,7 +693,15 @@
             h2.fw-bold {
                 font-size: 1.5rem !important;
             }
-        }
+@media (max-width: 767.98px) {
+    .position-fixed .btn {
+        width: 56px;
+        height: 56px;
+        padding: 0;
+        border-radius: 50%;
+        justify-content: center;
+    }
+}
     </style>
 
     @stack('styles')
@@ -672,6 +716,17 @@
     <main class="flex-grow-1">
         @yield('content')
     </main>
+
+    {{-- Floating Action Button: Tanya Minhub --}}
+    @unless(request()->routeIs('question.*'))
+        <a href="{{ route('question.create') }}"
+           class="floating-minhub"
+           aria-label="Tanya Minhub"
+           title="Tanya Minhub">
+            <img src="{{ asset('images/tanya minhub.png') }}"
+                 alt="Tanya Minhub">
+        </a>
+    @endunless
 
     @include('partials.footer')
 

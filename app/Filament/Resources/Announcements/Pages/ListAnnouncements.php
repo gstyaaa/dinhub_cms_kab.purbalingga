@@ -7,6 +7,7 @@ use App\Models\SiteSetting;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Notifications\Notification;
 use Filament\Resources\Pages\ListRecords;
 use Filament\Schemas\Components\Group;
@@ -35,6 +36,16 @@ class ListAnnouncements extends ListRecords
     {
         return $schema
             ->components([
+                Section::make('Fitur & Modul Website')
+                    ->description('Kelola pengaktifan modul publik di website.')
+                    ->icon('heroicon-o-cog-6-tooth')
+                    ->schema([
+                        Toggle::make('gallery_active')
+                            ->label('Aktifkan Halaman Galeri Foto')
+                            ->helperText('Jika dinonaktifkan, menu Galeri di Navbar disembunyikan dan pengunjung yang mengakses /galeri akan dialihkan ke Beranda.')
+                            ->default(true),
+                    ]),
+
                 Section::make('Sambutan Kepala Dinas')
                     ->description('Kelola foto, nama, dan kata sambutan Kepala Dinas yang tampil di halaman utama beranda.')
                     ->icon('heroicon-o-user-circle')
@@ -44,11 +55,11 @@ class ListAnnouncements extends ListRecords
                             FileUpload::make('kadis_photo')
                                 ->label('Foto Kepala Dinas')
                                 ->image()
+                                ->disk('public')
                                 ->directory('kadis')
-                                ->imageEditor()
-                                ->imageCropAspectRatio('3:4')
-                                ->maxSize(3072)
-                                ->helperText('Disarankan foto portrait (Maks 3MB).'),
+                                ->visibility('public')
+                                ->maxSize(5120)
+                                ->helperText('Disarankan foto portrait rasio 3:4 (Maks 5MB).'),
                         ])
                         ->columnSpan(['default' => 12, 'md' => 4]),
 
@@ -80,6 +91,8 @@ class ListAnnouncements extends ListRecords
     {
         $settings = SiteSetting::getSettings();
         $settings->update($this->kadisForm->getState());
+
+        $this->kadisForm->fill($settings->fresh()->toArray());
 
         Notification::make()
             ->title('Sambutan Kepala Dinas Berhasil Disimpan!')

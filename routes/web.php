@@ -6,9 +6,12 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\PpidController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\ServiceStandardController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/standar-pelayanan', [ServiceStandardController::class, 'index'])->name('standar-pelayanan');
 
 Route::prefix('profil')
     ->name('profile.')

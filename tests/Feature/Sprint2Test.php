@@ -90,10 +90,10 @@ class Sprint2Test extends TestCase
         $response->assertStatus(200);
 
         $postData = [
-            'name' => 'Budi Santoso',
+            'full_name' => 'Budi Santoso',
             'email' => 'budi@example.com',
             'subject' => 'Pertanyaan Kereta',
-            'question' => 'Bagaimana jadwal angkutan umum?',
+            'message' => 'Bagaimana jadwal angkutan umum di Kabupaten Purbalingga?',
         ];
 
         $postResponse = $this->post('/tanya-dishub', $postData);

@@ -169,43 +169,111 @@
             <div class="row g-4 mb-5">
                 {{-- Apa Itu PPID --}}
                 <div class="col-lg-6 reveal-left">
-                    <div class="card border-0 shadow-sm rounded-4 h-100 p-4">
-                        <div class="card-body d-flex flex-column">
-                            <div class="d-flex align-items-center gap-3 mb-3">
-                                <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 d-flex align-items-center justify-content-center" style="width: 56px; height: 56px;">
-                                    <i class="bi bi-info-circle-fill fs-3"></i>
+                    <div class="card border-0 shadow-sm rounded-4 h-100 p-3 p-md-4">
+                        <div class="card-body d-flex flex-column p-2">
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="bg-primary text-white rounded-3 p-3 d-flex align-items-center justify-content-center shadow-sm" style="width: 50px; height: 50px;">
+                                        <i class="bi bi-info-circle-fill fs-4"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="fw-bold mb-0 text-dark fs-4">Apa itu PPID?</h3>
+                                        <span class="text-muted small">Gambaran Umum Instansi</span>
+                                    </div>
                                 </div>
-                                <h3 class="fw-bold mb-0">Apa itu PPID?</h3>
+                                <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill small fw-semibold">
+                                    Profil Resmi
+                                </span>
                             </div>
-                            
-                            <div class="bg-light border rounded-4 p-4 my-auto text-center d-flex flex-column align-items-center justify-content-center" style="min-height: 180px;">
-                                <i class="bi bi-file-earmark-text text-primary fs-2 mb-2"></i>
-                                <h6 class="fw-bold text-dark mb-1">Informasi Gambaran Umum PPID</h6>
-                                <p class="text-muted small mb-0" style="max-width: 420px;">
-                                    Informasi mengenai profil dan gambaran umum PPID Pelaksana Dinas Perhubungan Kabupaten Purbalingga akan dipublikasikan setelah verifikasi dan penetapan dokumen resmi.
+
+                            {{-- SINGLE RECTANGLE CONTAINER FOR EXPLANATION --}}
+                            <div class="p-4 rounded-3 border my-auto" style="background-color: #f8fafc; border-color: #e2e8f0 !important; border-left: 4px solid #0d6efd !important;">
+                                <p class="text-secondary lh-base mb-3" style="font-size: 0.95rem;">
+                                    <strong>Pejabat Pengelola Informasi dan Dokumentasi (PPID) Pelaksana</strong> Dinas Perhubungan Kabupaten Purbalingga adalah unit kerja resmi yang bertanggung jawab dalam pengolahan, penyimpanan, pendokumentasian, serta penyediaan pelayanan informasi publik di lingkungan Dinas Perhubungan.
                                 </p>
+                                <p class="text-secondary lh-base mb-3" style="font-size: 0.95rem;">
+                                    Dibentuk berdasarkan amanat <strong>UU No. 14 Tahun 2008</strong> tentang Keterbukaan Informasi Publik (KIP) dan Regulasi Pemerintah Kabupaten Purbalingga untuk menjamin hak masyarakat dalam memperoleh informasi publik secara transparan, akurat, dan akuntabel.
+                                </p>
+                                <div class="pt-2 border-top border-secondary border-opacity-10 d-flex align-items-center gap-2">
+                                    <i class="bi bi-shield-check text-primary fs-5"></i>
+                                    <span class="small fw-semibold text-primary">Menjamin Pelayanan Informasi Cepat, Tepat & Transparan</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                {{-- Tugas Singkat PPID --}}
+                {{-- Tugas Pokok dan Fungsi PPID --}}
                 <div class="col-lg-6 reveal-right">
-                    <div class="card border-0 shadow-sm rounded-4 h-100 p-4">
-                        <div class="card-body d-flex flex-column">
-                            <div class="d-flex align-items-center gap-3 mb-3">
-                                <div class="bg-success bg-opacity-10 text-success rounded-circle p-3 d-flex align-items-center justify-content-center" style="width: 56px; height: 56px;">
-                                    <i class="bi bi-list-check fs-3"></i>
+                    <div class="card border-0 shadow-sm rounded-4 h-100 p-3 p-md-4">
+                        <div class="card-body d-flex flex-column p-2">
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="bg-success text-white rounded-3 p-3 d-flex align-items-center justify-content-center shadow-sm" style="width: 50px; height: 50px;">
+                                        <i class="bi bi-list-check fs-4"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="fw-bold mb-0 text-dark fs-4">Tugas Pokok dan Fungsi</h3>
+                                        <span class="text-muted small">Fungsi & Tanggung Jawab Utama</span>
+                                    </div>
                                 </div>
-                                <h3 class="fw-bold mb-0">Tugas Singkat PPID</h3>
+                                <span class="badge bg-success bg-opacity-10 text-success px-3 py-2 rounded-pill small fw-semibold">
+                                    Tupoksi
+                                </span>
                             </div>
-                            
-                            <div class="bg-light border rounded-4 p-4 my-auto text-center d-flex flex-column align-items-center justify-content-center" style="min-height: 180px;">
-                                <i class="bi bi-card-checklist text-success fs-2 mb-2"></i>
-                                <h6 class="fw-bold text-dark mb-1">Tugas & Fungsi PPID</h6>
-                                <p class="text-muted small mb-0" style="max-width: 420px;">
-                                    Rincian tugas pokok, fungsi, dan wewenang PPID Pelaksana Dinas Perhubungan Kabupaten Purbalingga akan dipublikasikan setelah penetapan SK resmi.
-                                </p>
+
+                            <div class="d-flex flex-column gap-2.5 my-auto">
+                                {{-- Task Item 1 --}}
+                                <div class="p-3 rounded-3 border d-flex align-items-start gap-3" style="background-color: #ffffff; border-color: #e2e8f0 !important;">
+                                    <div class="bg-success bg-opacity-10 text-success rounded-circle p-2 d-flex align-items-center justify-content-center flex-shrink-0 mt-0.5" style="width: 32px; height: 32px;">
+                                        <i class="bi bi-check-lg fw-bold"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="fw-bold text-dark mb-1 fs-6">Pelayanan Informasi Publik</h6>
+                                        <p class="text-secondary small mb-0 lh-base" style="font-size: 0.85rem;">
+                                            Menyediakan, memberikan, dan mengelola permohonan informasi publik masyarakat secara sederhana, cepat, dan efisien.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {{-- Task Item 2 --}}
+                                <div class="p-3 rounded-3 border d-flex align-items-start gap-3" style="background-color: #ffffff; border-color: #e2e8f0 !important;">
+                                    <div class="bg-success bg-opacity-10 text-success rounded-circle p-2 d-flex align-items-center justify-content-center flex-shrink-0 mt-0.5" style="width: 32px; height: 32px;">
+                                        <i class="bi bi-check-lg fw-bold"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="fw-bold text-dark mb-1 fs-6">Pengklasifikasian Informasi</h6>
+                                        <p class="text-secondary small mb-0 lh-base" style="font-size: 0.85rem;">
+                                            Mengategorikan daftar informasi publik (berkala, serta merta, setiap saat, maupun yang dikecualikan).
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {{-- Task Item 3 --}}
+                                <div class="p-3 rounded-3 border d-flex align-items-start gap-3" style="background-color: #ffffff; border-color: #e2e8f0 !important;">
+                                    <div class="bg-success bg-opacity-10 text-success rounded-circle p-2 d-flex align-items-center justify-content-center flex-shrink-0 mt-0.5" style="width: 32px; height: 32px;">
+                                        <i class="bi bi-check-lg fw-bold"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="fw-bold text-dark mb-1 fs-6">Pendokumentasian Arsip</h6>
+                                        <p class="text-secondary small mb-0 lh-base" style="font-size: 0.85rem;">
+                                            Mengoordinasikan pengumpulan, pengolahan, penyimpanan, dan pengamanan dokumen resmi milik dinas.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {{-- Task Item 4 --}}
+                                <div class="p-3 rounded-3 border d-flex align-items-start gap-3" style="background-color: #ffffff; border-color: #e2e8f0 !important;">
+                                    <div class="bg-success bg-opacity-10 text-success rounded-circle p-2 d-flex align-items-center justify-content-center flex-shrink-0 mt-0.5" style="width: 32px; height: 32px;">
+                                        <i class="bi bi-check-lg fw-bold"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="fw-bold text-dark mb-1 fs-6">Penanganan Keberatan</h6>
+                                        <p class="text-secondary small mb-0 lh-base" style="font-size: 0.85rem;">
+                                            Memproses dan menyelesaikan tanggapan atas sengketa atau keberatan permohonan informasi publik.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -278,19 +346,76 @@
                 </div>
             </div>
 
-            {{-- CTA Portal PPID Kabupaten --}}
+            {{-- Komitmen Keterbukaan Informasi Publik --}}
             <div class="row reveal">
                 <div class="col-12">
-                    <div class="card border-0 shadow-sm rounded-4 bg-primary text-white p-4 p-lg-5">
-                        <div class="card-body text-center">
-                            <i class="bi bi-globe display-4 mb-3 d-inline-block"></i>
-                            <h3 class="fw-bold mb-3">Permohonan Informasi Publik Online</h3>
-                            <p class="text-white-50 mx-auto mb-4" style="max-width: 700px;">
-                                Untuk mengajukan permohonan informasi publik secara terintegrasi, Anda dapat mengunjungi Portal PPID Utama Pemerintah Kabupaten Purbalingga.
+                    <div class="card border-0 shadow-sm rounded-4 text-white p-4 p-lg-5 overflow-hidden position-relative" style="background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 60%, #0a58ca 100%);">
+                        <div class="card-body text-center position-relative z-1">
+                            {{-- Ikon Utama --}}
+                            <div class="bg-warning text-dark rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center shadow-lg border border-2 border-white" style="width: 72px; height: 72px;">
+                                <i class="bi bi-shield-check fs-1"></i>
+                            </div>
+
+                            <span class="badge bg-warning text-dark rounded-pill px-3 py-2 mb-3 fw-bold text-uppercase tracking-wider">
+                                Visi & Komitmen Pelayanan
+                            </span>
+
+                            {{-- Judul --}}
+                            <h3 class="fw-bold mb-3 text-white fs-2">Komitmen Keterbukaan Informasi Publik</h3>
+
+                            {{-- Deskripsi --}}
+                            <p class="text-white-50 mx-auto mb-5 lead" style="max-width: 820px; font-size: 1.05rem;">
+                                Dinas Perhubungan Kabupaten Purbalingga berkomitmen menyelenggarakan pelayanan informasi publik secara terbuka, akurat, dan dapat dipertanggungjawabkan sebagai wujud transparansi serta akuntabilitas kepada masyarakat sesuai ketentuan peraturan perundang-undangan yang berlaku.
                             </p>
-                            <a href="{{ config('links.pemkab.url', 'https://ppid.purbalinggakab.go.id') }}" target="_blank" rel="noopener noreferrer" class="btn btn-warning btn-lg rounded-pill px-4 py-2 fw-bold text-dark shadow-sm">
-                                <i class="bi bi-box-arrow-up-right me-2"></i> Kunjungi Portal PPID Kabupaten Purbalingga
-                            </a>
+
+                            {{-- 3 Poin Nilai Utama --}}
+                            <div class="row g-4 text-start pt-3 border-top border-white border-opacity-20">
+                                {{-- 1. Transparan --}}
+                                <div class="col-md-4">
+                                    <div class="bg-white bg-opacity-10 rounded-4 p-4 h-100 border border-white border-opacity-15">
+                                        <div class="d-flex align-items-center gap-3 mb-2">
+                                            <div class="bg-warning text-dark rounded-circle p-2.5 d-inline-flex align-items-center justify-content-center flex-shrink-0" style="width: 42px; height: 42px;">
+                                                <i class="bi bi-eye-fill fs-5"></i>
+                                            </div>
+                                            <h5 class="fw-bold text-white mb-0 fs-5">Transparan</h5>
+                                        </div>
+                                        <p class="text-white-50 small mb-0 lh-base" style="font-size: 0.875rem;">
+                                            Informasi publik disampaikan secara terbuka sesuai ketentuan.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {{-- 2. Akuntabel --}}
+                                <div class="col-md-4">
+                                    <div class="bg-white bg-opacity-10 rounded-4 p-4 h-100 border border-white border-opacity-15">
+                                        <div class="d-flex align-items-center gap-3 mb-2">
+                                            <div class="bg-warning text-dark rounded-circle p-2.5 d-inline-flex align-items-center justify-content-center flex-shrink-0" style="width: 42px; height: 42px;">
+                                                <i class="bi bi-file-earmark-check-fill fs-5"></i>
+                                            </div>
+                                            <h5 class="fw-bold text-white mb-0 fs-5">Akuntabel</h5>
+                                        </div>
+                                        <p class="text-white-50 small mb-0 lh-base" style="font-size: 0.875rem;">
+                                            Informasi yang dipublikasikan dapat dipertanggungjawabkan.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {{-- 3. Melayani --}}
+                                <div class="col-md-4">
+                                    <div class="bg-white bg-opacity-10 rounded-4 p-4 h-100 border border-white border-opacity-15">
+                                        <div class="d-flex align-items-center gap-3 mb-2">
+                                            <div class="bg-warning text-dark rounded-circle p-2.5 d-inline-flex align-items-center justify-content-center flex-shrink-0" style="width: 42px; height: 42px;">
+                                                <i class="bi bi-people-fill fs-5"></i>
+                                            </div>
+                                            <h5 class="fw-bold text-white mb-0 fs-5">Melayani</h5>
+                                        </div>
+                                        <p class="text-white-50 small mb-0 lh-base" style="font-size: 0.875rem;">
+                                            Pelayanan informasi diberikan secara profesional dan responsif.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>

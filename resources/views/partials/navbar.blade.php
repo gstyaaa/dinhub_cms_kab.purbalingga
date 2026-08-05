@@ -1,3 +1,6 @@
+@php
+    $siteSettings = \App\Models\SiteSetting::getSettings();
+@endphp
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
     <div class="container">
 
@@ -108,6 +111,14 @@
                     </ul>
                 </li>
 
+                {{-- Standar Pelayanan --}}
+                <li class="nav-item">
+                    <a class="nav-link d-inline-flex align-items-center gap-2 px-3 {{ request()->routeIs('standar-pelayanan') ? 'active' : '' }}" href="{{ route('standar-pelayanan') }}">
+                        <i class="bi bi-award text-primary fs-6"></i>
+                        <span>Standar Pelayanan</span>
+                    </a>
+                </li>
+
                 {{-- Berita --}}
                 <li class="nav-item">
                     <a class="nav-link d-inline-flex align-items-center gap-2 px-3 {{ request()->routeIs('posts.*') ? 'active' : '' }}" href="{{ route('posts.index') }}">
@@ -117,20 +128,14 @@
                 </li>
 
                 {{-- Galeri --}}
-                <li class="nav-item">
-                    <a class="nav-link d-inline-flex align-items-center gap-2 px-3 {{ request()->routeIs('gallery.*') ? 'active' : '' }}" href="{{ route('gallery.index') }}">
-                        <i class="bi bi-images text-primary fs-6"></i>
-                        <span>Galeri</span>
-                    </a>
-                </li>
-
-                {{-- Tanya Dinhub --}}
-                <li class="nav-item">
-                    <a class="nav-link d-inline-flex align-items-center gap-2 px-3 {{ request()->routeIs('question.*') ? 'active' : '' }}" href="{{ route('question.create') }}">
-                        <i class="bi bi-chat-left-text text-primary fs-6"></i>
-                        <span>Tanya Dinhub</span>
-                    </a>
-                </li>
+                @if($siteSettings->gallery_active ?? true)
+                    <li class="nav-item">
+                        <a class="nav-link d-inline-flex align-items-center gap-2 px-3 {{ request()->routeIs('gallery.*') ? 'active' : '' }}" href="{{ route('gallery.index') }}">
+                            <i class="bi bi-images text-primary fs-6"></i>
+                            <span>Galeri</span>
+                        </a>
+                    </li>
+                @endif
 
             </ul>
         </div>
@@ -247,6 +252,14 @@
                         </details>
                     </li>
 
+                    {{-- Standar Pelayanan --}}
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center gap-3 py-2.5 {{ request()->routeIs('standar-pelayanan') ? 'active' : '' }}" href="{{ route('standar-pelayanan') }}">
+                            <i class="bi bi-award text-primary fs-6"></i>
+                            <span>Standar Pelayanan</span>
+                        </a>
+                    </li>
+
                     {{-- Berita --}}
                     <li class="nav-item">
                         <a class="nav-link d-flex align-items-center gap-3 py-2.5 {{ request()->routeIs('posts.*') ? 'active' : '' }}" href="{{ route('posts.index') }}">
@@ -256,20 +269,14 @@
                     </li>
 
                     {{-- Galeri --}}
-                    <li class="nav-item">
-                        <a class="nav-link d-flex align-items-center gap-3 py-2.5 {{ request()->routeIs('gallery.*') ? 'active' : '' }}" href="{{ route('gallery.index') }}">
-                            <i class="bi bi-images text-primary fs-6"></i>
-                            <span>Galeri</span>
-                        </a>
-                    </li>
-
-                    {{-- Tanya Dinhub --}}
-                    <li class="nav-item">
-                        <a class="nav-link d-flex align-items-center gap-3 py-2.5 {{ request()->routeIs('question.*') ? 'active' : '' }}" href="{{ route('question.create') }}">
-                            <i class="bi bi-chat-left-text text-primary fs-6"></i>
-                            <span>Tanya Dinhub</span>
-                        </a>
-                    </li>
+                    @if($siteSettings->gallery_active ?? true)
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center gap-3 py-2.5 {{ request()->routeIs('gallery.*') ? 'active' : '' }}" href="{{ route('gallery.index') }}">
+                                <i class="bi bi-images text-primary fs-6"></i>
+                                <span>Galeri</span>
+                            </a>
+                        </li>
+                    @endif
 
                 </ul>
             </div>
