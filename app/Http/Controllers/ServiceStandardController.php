@@ -13,6 +13,8 @@ class ServiceStandardController extends Controller
     {
         $documents = PublicDocument::active()
             ->category('Standar Pelayanan')
+            ->whereNotNull('file_path')
+            ->where('file_path', '!=', '')
             ->get();
 
         $posters = [
