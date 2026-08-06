@@ -723,8 +723,10 @@
            class="floating-minhub"
            aria-label="Tanya Minhub"
            title="Tanya Minhub">
-            <img src="{{ asset('images/tanya minhub.png') }}"
-                 alt="Tanya Minhub">
+            <picture>
+                <source srcset="{{ asset('images/tanya-minhub.webp') }}" type="image/webp">
+                <img src="{{ asset('images/tanya minhub.png') }}" alt="Tanya Minhub" loading="lazy">
+            </picture>
         </a>
     @endunless
 
