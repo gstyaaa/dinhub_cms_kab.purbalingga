@@ -83,7 +83,7 @@ class PostsTable
                     ->modalDescription('Apakah Anda yakin ingin menghapus berita ini? Tindakan ini tidak dapat dibatalkan.')
                     ->modalSubmitActionLabel('Ya, Hapus'),
             ])
-            ->defaultSort('created_at', 'desc')
+            ->defaultSort('published_at', 'desc')
             ->emptyStateHeading('Belum Ada Berita')
             ->emptyStateDescription('Silakan tulis dan publikasikan berita baru.')
             ->emptyStateIcon('heroicon-o-newspaper');
