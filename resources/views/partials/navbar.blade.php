@@ -6,7 +6,7 @@
 
         {{-- Logo --}}
         <a class="navbar-brand d-flex align-items-center gap-2 fw-bold text-primary" href="{{ route('home') }}">
-            <img src="{{ asset(config('dishub.logo', 'images/no-image.jpg')) }}"
+            <img src="{{ asset(config('dishub.logo', 'images/new-dinhub.png')) }}"
                 alt="Logo {{ config('dishub.short_name', 'Dinhub Purbalingga') }}"
                 height="42"
                 class="object-fit-contain">
@@ -154,7 +154,7 @@
         <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="mobileSidebarDrawer" aria-labelledby="mobileSidebarDrawerLabel">
             <div class="offcanvas-header bg-white border-bottom py-3">
                 <div class="d-flex align-items-center gap-2">
-                    <img src="{{ asset(config('dishub.logo', 'images/no-image.jpg')) }}"
+                    <img src="{{ asset(config('dishub.logo', 'images/new-dinhub.png')) }}"
                         alt="Logo" height="32" class="object-fit-contain">
                     <span class="fw-bold text-primary fs-6 mb-0" id="mobileSidebarDrawerLabel">
                         {{ strtoupper(config('dishub.short_name', 'Dinhub Purbalingga')) }}
