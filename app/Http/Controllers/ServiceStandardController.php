@@ -11,15 +11,8 @@ class ServiceStandardController extends Controller
      */
     public function index()
     {
-        $supportingCategories = [
-            'Standar Pelayanan',
-            'Maklumat Pelayanan',
-            'Kode Etik',
-            'Nilai SKM',
-        ];
-
         $documents = PublicDocument::active()
-            ->whereIn('category', $supportingCategories)
+            ->category('Standar Pelayanan')
             ->get();
 
         $posters = [
