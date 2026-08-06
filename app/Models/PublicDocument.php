@@ -78,7 +78,9 @@ class PublicDocument extends Model
      */
     public function scopeActive($query)
     {
-        return $query->where('is_active', true);
+        return $query->where('is_active', true)
+            ->whereNotNull('file_path')
+            ->where('file_path', '!=', '');
     }
 
     /**

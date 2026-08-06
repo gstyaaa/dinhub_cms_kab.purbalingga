@@ -1,5 +1,5 @@
 -- Backup Database Dishub CMS
--- Date: 2026-08-06 04:08:19
+-- Date: 2026-08-06 04:10:16
 SET FOREIGN_KEY_CHECKS=0;
 
 -- --------------------------------------------------------
@@ -612,27 +612,6 @@ CREATE TABLE `public_documents` (
 ) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `public_documents`
-INSERT INTO `public_documents` (`id`, `category`, `title`, `file_path`, `is_active`, `created_at`, `updated_at`) VALUES ('1', 'Program & Kegiatan', 'Rencana Kerja Dan Anggaran', NULL, '1', '2026-08-06 08:19:08', '2026-08-06 10:44:51');
-INSERT INTO `public_documents` (`id`, `category`, `title`, `file_path`, `is_active`, `created_at`, `updated_at`) VALUES ('2', 'Program & Kegiatan', 'Dokumen Pelaksanaan Anggaran', NULL, '1', '2026-08-06 08:19:09', '2026-08-06 08:19:09');
-INSERT INTO `public_documents` (`id`, `category`, `title`, `file_path`, `is_active`, `created_at`, `updated_at`) VALUES ('3', 'Program & Kegiatan', 'Realisasi Anggaran', NULL, '1', '2026-08-06 08:19:09', '2026-08-06 08:19:09');
-INSERT INTO `public_documents` (`id`, `category`, `title`, `file_path`, `is_active`, `created_at`, `updated_at`) VALUES ('4', 'Program & Kegiatan', 'Realisasi Keuangan', NULL, '1', '2026-08-06 08:19:09', '2026-08-06 08:19:09');
-INSERT INTO `public_documents` (`id`, `category`, `title`, `file_path`, `is_active`, `created_at`, `updated_at`) VALUES ('5', 'Program & Kegiatan', 'Neraca', NULL, '1', '2026-08-06 08:19:09', '2026-08-06 08:19:09');
-INSERT INTO `public_documents` (`id`, `category`, `title`, `file_path`, `is_active`, `created_at`, `updated_at`) VALUES ('6', 'Program & Kegiatan', 'Daftar Aset', NULL, '1', '2026-08-06 08:19:09', '2026-08-06 08:19:09');
-INSERT INTO `public_documents` (`id`, `category`, `title`, `file_path`, `is_active`, `created_at`, `updated_at`) VALUES ('7', 'SAKIP', 'Cascading', NULL, '1', '2026-08-06 08:19:09', '2026-08-06 08:19:09');
-INSERT INTO `public_documents` (`id`, `category`, `title`, `file_path`, `is_active`, `created_at`, `updated_at`) VALUES ('8', 'Program & Kegiatan', 'Indikator Kinerja Utama', NULL, '1', '2026-08-06 08:19:09', '2026-08-06 10:31:12');
-INSERT INTO `public_documents` (`id`, `category`, `title`, `file_path`, `is_active`, `created_at`, `updated_at`) VALUES ('9', 'Program & Kegiatan', 'Rencana Strategis', NULL, '1', '2026-08-06 08:19:09', '2026-08-06 10:31:12');
-INSERT INTO `public_documents` (`id`, `category`, `title`, `file_path`, `is_active`, `created_at`, `updated_at`) VALUES ('10', 'Program & Kegiatan', 'Rencana Kerja Tahunan', NULL, '1', '2026-08-06 08:19:09', '2026-08-06 10:31:12');
-INSERT INTO `public_documents` (`id`, `category`, `title`, `file_path`, `is_active`, `created_at`, `updated_at`) VALUES ('11', 'SAKIP', 'Perjanjian Kinerja', NULL, '1', '2026-08-06 08:19:09', '2026-08-06 08:19:09');
-INSERT INTO `public_documents` (`id`, `category`, `title`, `file_path`, `is_active`, `created_at`, `updated_at`) VALUES ('12', 'Program & Kegiatan', 'Laporan Kinerja Instansi Pemerintah', NULL, '1', '2026-08-06 08:19:09', '2026-08-06 10:31:12');
-INSERT INTO `public_documents` (`id`, `category`, `title`, `file_path`, `is_active`, `created_at`, `updated_at`) VALUES ('13', 'Program & Kegiatan', 'Keputusan Menteri', NULL, '1', '2026-08-06 08:19:09', '2026-08-06 10:31:12');
-INSERT INTO `public_documents` (`id`, `category`, `title`, `file_path`, `is_active`, `created_at`, `updated_at`) VALUES ('14', 'Peraturan', 'Peraturan Daerah', NULL, '1', '2026-08-06 08:19:09', '2026-08-06 08:19:09');
-INSERT INTO `public_documents` (`id`, `category`, `title`, `file_path`, `is_active`, `created_at`, `updated_at`) VALUES ('15', 'Peraturan', 'Peraturan Bupati', NULL, '1', '2026-08-06 08:19:09', '2026-08-06 08:19:09');
-INSERT INTO `public_documents` (`id`, `category`, `title`, `file_path`, `is_active`, `created_at`, `updated_at`) VALUES ('16', 'Peraturan', 'Peraturan Pemerintah', NULL, '1', '2026-08-06 08:19:09', '2026-08-06 08:19:09');
-INSERT INTO `public_documents` (`id`, `category`, `title`, `file_path`, `is_active`, `created_at`, `updated_at`) VALUES ('17', 'Standar Pelayanan', 'SK Standar Pelayanan Dinas Perhubungan', NULL, '1', '2026-08-06 08:19:09', '2026-08-06 08:19:09');
-INSERT INTO `public_documents` (`id`, `category`, `title`, `file_path`, `is_active`, `created_at`, `updated_at`) VALUES ('18', 'Standar Pelayanan', 'Maklumat Pelayanan Dinas Perhubungan', NULL, '1', '2026-08-06 08:19:09', '2026-08-06 10:31:12');
-INSERT INTO `public_documents` (`id`, `category`, `title`, `file_path`, `is_active`, `created_at`, `updated_at`) VALUES ('19', 'Standar Pelayanan', 'Kode Etik Pelayanan Publik', NULL, '1', '2026-08-06 08:19:09', '2026-08-06 10:31:12');
-INSERT INTO `public_documents` (`id`, `category`, `title`, `file_path`, `is_active`, `created_at`, `updated_at`) VALUES ('20', 'Standar Pelayanan', 'Nilai SKM Semester I', NULL, '1', '2026-08-06 08:19:09', '2026-08-06 10:31:12');
-INSERT INTO `public_documents` (`id`, `category`, `title`, `file_path`, `is_active`, `created_at`, `updated_at`) VALUES ('21', 'Standar Pelayanan', 'Nilai SKM Semester Ii', NULL, '1', '2026-08-06 08:19:09', '2026-08-06 10:44:51');
 INSERT INTO `public_documents` (`id`, `category`, `title`, `file_path`, `is_active`, `created_at`, `updated_at`) VALUES ('22', 'Standar Pelayanan', 'SK Standar Pelayanan 2026', 'documents/1785979716_jsjArm_SK-STANDAR-PELAYANAN-2026.pdf', '1', '2026-08-06 08:28:37', '2026-08-06 10:44:51');
 INSERT INTO `public_documents` (`id`, `category`, `title`, `file_path`, `is_active`, `created_at`, `updated_at`) VALUES ('23', 'Standar Pelayanan', 'SK PPID 2026', 'documents/1785979717_zTl1Zr_SK-PPID-2026.pdf', '1', '2026-08-06 08:28:38', '2026-08-06 10:31:12');
 INSERT INTO `public_documents` (`id`, `category`, `title`, `file_path`, `is_active`, `created_at`, `updated_at`) VALUES ('24', 'Standar Pelayanan', 'Nilai SKM Sem 1 2025 9 Unsur', 'documents/1785979718_dP6MGF_nilai-skm-sem-1-2025-9-unsur.pdf', '1', '2026-08-06 08:28:38', '2026-08-06 10:44:51');
