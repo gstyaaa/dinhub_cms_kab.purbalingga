@@ -12,11 +12,14 @@
                          alt="Kepala {{ config('dishub.name') }}"
                          loading="lazy">
                 @else
-                    <img src="{{ asset('images/kadishub-placeholder.jpg') }}"
-                         class="img-fluid rounded-4 shadow-md object-fit-cover"
-                         style="max-height: 380px; width: 100%;"
-                         alt="Kepala {{ config('dishub.name') }}"
-                         loading="lazy">
+                    <picture>
+                        <source srcset="{{ asset('images/kadishub-placeholder.webp') }}" type="image/webp">
+                        <img src="{{ asset('images/kadishub-placeholder.jpg') }}"
+                             class="img-fluid rounded-4 shadow-md object-fit-cover"
+                             style="max-height: 380px; width: 100%;"
+                             alt="Kepala {{ config('dishub.name') }}"
+                             loading="lazy">
+                    </picture>
                 @endif
             </div>
 
