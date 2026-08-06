@@ -73,7 +73,7 @@
 
                 {{-- FOTO KANTOR --}}
                 <div class="card border-0 shadow-sm rounded-3 overflow-hidden reveal-scale delay-1">
-                    <img src="{{ asset('images/hero-default.jpg') }}" class="card-img-top" alt="Kantor Dinas Perhubungan Kabupaten Purbalingga" style="max-height: 450px; object-fit: cover;">
+                    <img src="{{ asset('images/hero-default.webp') }}" class="card-img-top" alt="Kantor Dinas Perhubungan Kabupaten Purbalingga" style="max-height: 450px; object-fit: cover;">
                     <div class="card-body text-center bg-white py-3">
                         <p class="text-muted small mb-0">
                             <i class="bi bi-geo-alt-fill text-primary me-1"></i> Kantor Dinas Perhubungan Kabupaten Purbalingga — {{ config('dishub.address') }}

@@ -15,7 +15,7 @@
                 @endforeach
             @else
                 <div class="carousel-item h-100 active" data-bs-interval="10000">
-                    <img src="{{ asset('images/hero-default.jpg') }}"
+                    <img src="{{ asset('images/hero-default.webp') }}"
                          class="d-block w-100 h-100 object-fit-cover"
                          style="object-position: center 25%;"
                          alt="Hero Dinhub Purbalingga">

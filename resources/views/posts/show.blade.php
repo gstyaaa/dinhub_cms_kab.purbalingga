@@ -24,7 +24,7 @@
                         @if($post->thumbnail)
                             <img src="{{ Storage::url($post->thumbnail) }}" class="card-img-top" alt="{{ $post->title }}" style="max-height: 480px; width: 100%; object-fit: cover; object-position: center 20%;">
                         @else
-                            <img src="{{ asset('images/news-placeholder.jpg') }}" class="card-img-top" alt="{{ $post->title }}" style="max-height: 480px; width: 100%; object-fit: cover; object-position: center 20%;">
+                            <img src="{{ asset('images/news-placeholder.webp') }}" class="card-img-top" alt="{{ $post->title }}" style="max-height: 480px; width: 100%; object-fit: cover; object-position: center 20%;">
                         @endif
 
                         <div class="card-body p-4 p-md-5">

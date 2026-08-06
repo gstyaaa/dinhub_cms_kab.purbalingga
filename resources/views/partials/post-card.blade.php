@@ -3,7 +3,7 @@
         @if($post->thumbnail)
             <img src="{{ Storage::url($post->thumbnail) }}" class="card-img-top" alt="{{ $post->title }}" style="aspect-ratio: 16/9; width: 100%; object-fit: cover; object-position: center 20%;" loading="lazy">
         @else
-            <img src="{{ asset('images/news-placeholder.jpg') }}" class="card-img-top" alt="{{ $post->title }}" style="aspect-ratio: 16/9; width: 100%; object-fit: cover; object-position: center 20%;" loading="lazy">
+            <img src="{{ asset('images/news-placeholder.webp') }}" class="card-img-top" alt="{{ $post->title }}" style="aspect-ratio: 16/9; width: 100%; object-fit: cover; object-position: center 20%;" loading="lazy">
         @endif
 
         <div class="card-body d-flex flex-column">
