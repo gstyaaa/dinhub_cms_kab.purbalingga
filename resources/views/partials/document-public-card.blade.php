@@ -36,7 +36,7 @@
                    target="_blank" 
                    rel="noopener noreferrer" 
                    class="btn btn-primary rounded-pill w-100 py-2.5 fw-semibold shadow-sm">
-                    <i class="bi bi-eye-fill me-1.5"></i> Lihat Dokumen
+                    <i class="bi bi-eye-fill me-1.5"></i> Lihat PDF
                 </a>
             @else
                 <button class="btn btn-secondary rounded-pill w-100 py-2.5 fw-semibold opacity-75" disabled>
