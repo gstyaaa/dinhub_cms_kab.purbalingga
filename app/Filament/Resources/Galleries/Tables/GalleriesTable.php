@@ -27,12 +27,8 @@ class GalleriesTable
                     ->placeholder('Tanpa Judul')
                     ->searchable(),
 
-                IconColumn::make('is_published')
-                    ->label('Tayang')
-                    ->boolean(),
-
                 TextColumn::make('created_at')
-                    ->label('Tanggal Upload')
+                    ->label('Tanggal Unggah')
                     ->date('d M Y, H:i'),
             ])
             ->recordActions([
@@ -44,8 +40,8 @@ class GalleriesTable
                     ->modalDescription('Apakah Anda yakin ingin menghapus foto galeri ini? Tindakan ini tidak dapat dibatalkan.')
                     ->modalSubmitActionLabel('Ya, Hapus'),
             ])
-            ->emptyStateHeading('Belum Ada Foto Galeri')
-            ->emptyStateDescription('Silakan unggah foto kegiatan dinas perhubungan.')
-            ->emptyStateIcon('heroicon-o-rectangle-stack');
+            ->emptyStateHeading('Belum ada data foto galeri')
+            ->emptyStateDescription('Silakan klik "Tambah Foto Galeri Baru" untuk mengunggah dokumentasi foto kegiatan.')
+            ->emptyStateIcon('heroicon-o-photo');
     }
 }

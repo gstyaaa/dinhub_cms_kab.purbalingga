@@ -24,7 +24,9 @@ class AnnouncementResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Pengumuman Running Text';
 
-    protected static \UnitEnum|string|null $navigationGroup = 'Konten';
+    protected static \UnitEnum|string|null $navigationGroup = 'KONTEN';
+
+    protected static ?int $navigationSort = 1;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedAdjustmentsHorizontal;
 

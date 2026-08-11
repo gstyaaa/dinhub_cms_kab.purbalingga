@@ -6,6 +6,7 @@ use App\Filament\Resources\Posts\PostResource;
 use Filament\Actions\Action;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -43,21 +44,21 @@ class PostForm
 
                             TextInput::make('title')
                                 ->label('Judul Berita')
+                                ->placeholder('Masukkan judul berita')
                                 ->required()
                                 ->maxLength(255)
                                 ->live(onBlur: true)
-                                ->afterStateUpdated(function (Set $set, ?string $state) {
-                                    $set('slug', Str::slug($state));
+                                ->afterStateUpdated(function (Set $set, ?string $state, $record) {
+                                    if (blank($record?->slug)) {
+                                        $set('slug', Str::slug($state));
+                                    }
                                 }),
 
-                            TextInput::make('slug')
-                                ->label('Slug')
-                                ->disabled()
-                                ->dehydrated()
-                                ->required(),
+                            Hidden::make('slug')
+                                ->dehydrated(),
 
                             FileUpload::make('thumbnail')
-                                ->label('Thumbnail')
+                                ->label('Thumbnail Berita')
                                 ->image()
                                 ->directory('posts')
                                 ->disk('public')
@@ -73,39 +74,24 @@ class PostForm
                         ->schema([
 
                             Select::make('status')
-                                ->label('Status')
+                                ->label('Status Publikasi')
                                 ->options([
-                                    'draft' => 'Draft',
-                                    'published' => 'Published',
+                                    'draft' => 'Draf',
+                                    'published' => 'Diterbitkan',
                                 ])
                                 ->default('draft')
                                 ->required(),
 
                             Toggle::make('is_headline')
-                                ->label('Jadikan Headline')
+                                ->label('Jadikan Headline Berita')
                                 ->default(false),
 
                             DateTimePicker::make('published_at')
-                                ->label('Tanggal Publish')
+                                ->label('Tanggal Publikasi')
                                 ->seconds(false),
 
                         ])
                         ->columns(1),
-
-                    Actions::make([
-                        Action::make('save')
-                            ->label('Simpan Berita')
-                            ->submit('save')
-                            ->color('primary')
-                            ->button(),
-
-                        Action::make('cancel')
-                            ->label('Batal')
-                            ->url(fn () => PostResource::getUrl('index'))
-                            ->color('gray')
-                            ->button(),
-                    ])
-                    ->fullWidth(),
 
                 ])
                 ->columnSpan(['lg' => 1]),
@@ -116,13 +102,14 @@ class PostForm
                         ->schema([
 
                             Textarea::make('excerpt')
-                                ->label('Ringkasan')
+                                ->label('Ringkasan / Sub-Judul')
+                                ->placeholder('Masukkan ringkasan singkat berita...')
                                 ->rows(3)
                                 ->maxLength(255)
                                 ->columnSpanFull(),
 
                             RichEditor::make('content')
-                                ->label('Isi Berita')
+                                ->label('Isi Lengkap Berita')
                                 ->required()
                                 ->columnSpanFull(),
 

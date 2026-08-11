@@ -27,9 +27,9 @@ class DokumenPublikResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Manajemen Dokumen';
 
-    protected static \UnitEnum|string|null $navigationGroup = 'PPID';
+    protected static \UnitEnum|string|null $navigationGroup = 'DOKUMEN PUBLIK';
 
-    protected static ?int $navigationSort = 2;
+    protected static ?int $navigationSort = 1;
 
     protected static ?string $recordTitleAttribute = 'title';
 

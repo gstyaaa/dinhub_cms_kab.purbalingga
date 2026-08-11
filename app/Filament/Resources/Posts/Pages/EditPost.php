@@ -12,12 +12,20 @@ class EditPost extends EditRecord
 {
     protected static string $resource = PostResource::class;
 
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
+
     protected function getHeaderActions(): array
     {
         return [
-            DeleteAction::make(),
-            ForceDeleteAction::make(),
-            RestoreAction::make(),
+            DeleteAction::make()
+                ->label('Hapus'),
+            ForceDeleteAction::make()
+                ->label('Hapus Permanen'),
+            RestoreAction::make()
+                ->label('Pulihkan'),
         ];
     }
 }

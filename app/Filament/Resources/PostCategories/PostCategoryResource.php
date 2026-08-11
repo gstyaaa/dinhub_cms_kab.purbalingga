@@ -24,11 +24,11 @@ class PostCategoryResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Kategori Berita';
 
-    protected static \UnitEnum|string|null $navigationGroup = 'Konten';
+    protected static \UnitEnum|string|null $navigationGroup = 'KONTEN';
 
-    protected static ?int $navigationSort = 2;
+    protected static ?int $navigationSort = 3;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedNewspaper;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedTag;
 
     protected static ?string $recordTitleAttribute = 'name';
 

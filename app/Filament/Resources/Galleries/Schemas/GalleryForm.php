@@ -27,10 +27,6 @@ class GalleryForm
                             ->directory('gallery')
                             ->image()
                             ->required(),
-
-                        Toggle::make('is_published')
-                            ->label('Publikasikan')
-                            ->default(true),
                     ]),
             ]);
     }

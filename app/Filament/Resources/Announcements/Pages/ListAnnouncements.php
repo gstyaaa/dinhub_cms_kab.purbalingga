@@ -36,16 +36,6 @@ class ListAnnouncements extends ListRecords
     {
         return $schema
             ->components([
-                Section::make('Fitur & Modul Website')
-                    ->description('Kelola pengaktifan modul publik di website.')
-                    ->icon('heroicon-o-cog-6-tooth')
-                    ->schema([
-                        Toggle::make('gallery_active')
-                            ->label('Aktifkan Halaman Galeri Foto')
-                            ->helperText('Jika dinonaktifkan, menu Galeri di Navbar disembunyikan dan pengunjung yang mengakses /galeri akan dialihkan ke Beranda.')
-                            ->default(true),
-                    ]),
-
                 Section::make('Sambutan Kepala Dinas')
                     ->description('Kelola foto, nama, dan kata sambutan Kepala Dinas yang tampil di halaman utama beranda.')
                     ->icon('heroicon-o-user-circle')

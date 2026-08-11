@@ -54,7 +54,7 @@ class AnnouncementsTable
                     ->modalDescription('Apakah Anda yakin ingin menghapus pengumuman running text ini? Tindakan ini tidak dapat dibatalkan.')
                     ->modalSubmitActionLabel('Ya, Hapus'),
             ])
-            ->emptyStateHeading('Belum Ada Pengumuman Running Text')
+            ->emptyStateHeading('Belum ada data pengumuman running text')
             ->emptyStateDescription('Silakan klik tombol "Tambah Pengumuman Baru" di atas untuk membuat teks berjalan baru.')
             ->emptyStateIcon('heroicon-o-megaphone');
     }

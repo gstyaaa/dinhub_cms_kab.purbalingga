@@ -26,9 +26,9 @@ class GalleryResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Galeri Foto';
 
-    protected static \UnitEnum|string|null $navigationGroup = 'Konten';
+    protected static \UnitEnum|string|null $navigationGroup = 'MEDIA';
 
-    protected static ?int $navigationSort = 3;
+    protected static ?int $navigationSort = 1;
 
     protected static ?string $recordTitleAttribute = 'title';
 

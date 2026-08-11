@@ -29,21 +29,20 @@ class BannerForm
 
                         TextInput::make('title')
                             ->label('Nama / Judul Banner (Opsional)')
-                            ->placeholder('Contoh: Banner Mudik Gratis 2026')
+                            ->placeholder(fn () => 'Contoh: Banner ' . ((\App\Models\Banner::max('sort_order') ?? 0) + 1))
                             ->maxLength(255),
 
                         TextInput::make('sort_order')
                             ->label('Urutan Tampil')
+                            ->helperText('Ditentukan secara otomatis (urutan terakhir + 1).')
                             ->numeric()
-                            ->default(0)
+                            ->default(fn () => (\App\Models\Banner::max('sort_order') ?? 0) + 1)
+                            ->disabled()
+                            ->dehydrated()
                             ->required(),
 
-                        Toggle::make('is_active')
-                            ->label('Aktifkan Banner')
-                            ->default(true),
-
                     ])
-                    ->columns(3),
+                    ->columns(2),
 
             ]);
     }

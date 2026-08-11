@@ -26,7 +26,7 @@ class QuestionResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Tanya Dinhub';
 
-    protected static \UnitEnum|string|null $navigationGroup = 'Layanan Publik';
+    protected static \UnitEnum|string|null $navigationGroup = 'LAYANAN PUBLIK';
 
     protected static ?int $navigationSort = 1;
 

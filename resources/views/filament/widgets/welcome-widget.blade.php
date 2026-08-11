@@ -1,27 +1,29 @@
 <x-filament-widgets::widget>
-    <x-filament::section>
-        <div style="background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%); color: #ffffff; padding: 1.75rem; border-radius: 0.75rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
-            <div style="flex: 1; min-width: 280px;">
-                <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255, 255, 255, 0.18); padding: 0.35rem 0.85rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; margin-bottom: 0.75rem; border: 1px solid rgba(255, 255, 255, 0.25);">
-                    <span style="height: 8px; width: 8px; background-color: #10b981; border-radius: 50%; display: inline-block;"></span>
-                    <span>Sistem Aktif &bull; {{ \Carbon\Carbon::now()->locale('id')->isoFormat('dddd, D MMMM YYYY') }}</span>
+    <div class="fi-welcome-header-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-sm transition-all" style="border-left: 4px solid #0D6EFD !important;">
+        <div class="welcome-container flex flex-col sm:flex-row sm:items-start justify-between gap-6 sm:gap-8">
+            <!-- Left Side Text Content Wrapper -->
+            <div class="welcome-content min-w-0 flex-1 max-w-2xl">
+                <div class="welcome-label text-[12px] font-semibold tracking-wider text-[#0D6EFD] dark:text-blue-400 uppercase mb-[12px]">
+                    PANEL PENGELOLAAN WEBSITE
                 </div>
 
-                <h2 style="font-size: 1.65rem; font-weight: 800; margin: 0 0 0.5rem 0; color: #ffffff; line-height: 1.2;">
-                    Selamat Datang, {{ auth()->user()->name ?? 'Admin' }}!
-                </h2>
+                <div class="welcome-title text-xl sm:text-[21px] font-bold text-[#111827] dark:text-white tracking-tight leading-snug mb-[8px]">
+                    Dinas Perhubungan Kabupaten Purbalingga
+                </div>
 
-                <p style="margin: 0; font-size: 0.875rem; opacity: 0.92; max-width: 620px; line-height: 1.5; color: #e2e8f0;">
-                    Panel Pengelolaan Konten Portal Resmi <strong>Dinas Perhubungan Kabupaten Purbalingga</strong>.
-                </p>
+                <div class="welcome-description text-sm text-[#64748B] dark:text-slate-400 leading-relaxed font-normal">
+                    Kelola berita, dokumen publik, galeri foto, dan layanan masyarakat melalui panel administrasi ini.
+                </div>
             </div>
 
-            <div style="display: flex; gap: 0.75rem; flex-shrink: 0;">
-                <a href="{{ route('home') }}" target="_blank" 
-                   style="display: inline-flex; align-items: center; gap: 0.5rem; background: #ffffff; color: #1e3a8a; font-weight: 700; font-size: 0.875rem; padding: 0.65rem 1.25rem; border-radius: 0.5rem; text-decoration: none; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
-                    <span>🌐 Lihat Web</span>
+            <!-- Right Side CTA Button Wrapper (Top Right Alignment) -->
+            <div class="welcome-actions flex items-center flex-shrink-0 pt-0.5 sm:pt-0">
+                <a href="{{ route('home') }}" target="_blank" rel="noopener noreferrer" 
+                   class="welcome-button inline-flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-white bg-[#0D6EFD] hover:bg-blue-700 active:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-500 rounded-lg shadow-sm transition-all duration-150">
+                    <x-heroicon-o-globe-alt class="w-4 h-4 text-white" />
+                    <span>Lihat Website Publik</span>
                 </a>
             </div>
         </div>
-    </x-filament::section>
+    </div>
 </x-filament-widgets::widget>

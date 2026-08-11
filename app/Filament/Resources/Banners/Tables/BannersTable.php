@@ -32,10 +32,6 @@ class BannersTable
                     ->label('Urutan')
                     ->sortable(),
 
-                IconColumn::make('is_active')
-                    ->label('Aktif')
-                    ->boolean(),
-
                 TextColumn::make('created_at')
                     ->label('Dibuat')
                     ->date('d M Y'),
@@ -53,8 +49,8 @@ class BannersTable
                     ->modalDescription('Apakah Anda yakin ingin menghapus banner ini? Tindakan ini tidak dapat dibatalkan.')
                     ->modalSubmitActionLabel('Ya, Hapus'),
             ])
-            ->emptyStateHeading('Belum Ada Banner')
-            ->emptyStateDescription('Silakan unggah gambar banner untuk slider di halaman depan.')
-            ->emptyStateIcon('heroicon-o-photo');
+            ->emptyStateHeading('Belum ada data banner')
+            ->emptyStateDescription('Silakan klik "Tambah Banner Baru" untuk mengunggah gambar banner di halaman depan.')
+            ->emptyStateIcon('heroicon-o-rectangle-stack');
     }
 }

@@ -44,8 +44,8 @@ class PostCategoriesTable
                     ->modalDescription('Apakah Anda yakin ingin menghapus kategori berita ini? Tindakan ini tidak dapat dibatalkan.')
                     ->modalSubmitActionLabel('Ya, Hapus'),
             ])
-            ->emptyStateHeading('Belum Ada Kategori')
-            ->emptyStateDescription('Silakan buat kategori berita baru.')
-            ->emptyStateIcon('heroicon-o-folder');
+            ->emptyStateHeading('Belum ada data kategori')
+            ->emptyStateDescription('Silakan klik "Tambah Kategori Berita Baru" untuk membuat kategori berita baru.')
+            ->emptyStateIcon('heroicon-o-tag');
     }
 }

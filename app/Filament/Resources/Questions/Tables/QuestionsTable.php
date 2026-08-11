@@ -118,7 +118,7 @@ class QuestionsTable
                     ->modalDescription('Apakah Anda yakin ingin menghapus pertanyaan ini? Tindakan ini tidak dapat dibatalkan.')
                     ->modalSubmitActionLabel('Ya, Hapus'),
             ])
-            ->emptyStateHeading('Belum Ada Pertanyaan Masuk')
+            ->emptyStateHeading('Belum ada data pertanyaan masuk')
             ->emptyStateDescription('Pertanyaan dari masyarakat melalui fitur Tanya Dinhub akan tampil di sini.')
             ->emptyStateIcon('heroicon-o-chat-bubble-left-right');
     }

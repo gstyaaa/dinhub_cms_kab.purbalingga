@@ -45,6 +45,11 @@ class PostsTable
                 TextColumn::make('status')
                     ->label('Status')
                     ->badge()
+                    ->formatStateUsing(fn (string $state): string => match ($state) {
+                        'published' => 'Diterbitkan',
+                        'draft' => 'Draf',
+                        default => $state,
+                    })
                     ->color(fn (string $state): string => match ($state) {
                         'published' => 'success',
                         'draft' => 'warning',
@@ -56,7 +61,7 @@ class PostsTable
                     ->boolean(),
 
                 TextColumn::make('published_at')
-                    ->label('Publish')
+                    ->label('Tanggal Publikasi')
                     ->dateTime('d M Y')
                     ->sortable(),
 
@@ -65,9 +70,10 @@ class PostsTable
             ->filters([
 
                 SelectFilter::make('status')
+                    ->label('Status Publikasi')
                     ->options([
-                        'draft' => 'Draft',
-                        'published' => 'Published',
+                        'draft' => 'Draf',
+                        'published' => 'Diterbitkan',
                     ]),
 
                 TrashedFilter::make(),
@@ -84,8 +90,8 @@ class PostsTable
                     ->modalSubmitActionLabel('Ya, Hapus'),
             ])
             ->defaultSort('published_at', 'desc')
-            ->emptyStateHeading('Belum Ada Berita')
-            ->emptyStateDescription('Silakan tulis dan publikasikan berita baru.')
+            ->emptyStateHeading('Belum ada data berita')
+            ->emptyStateDescription('Silakan klik "Tambah Berita" untuk menulis dan mempublikasikan berita baru.')
             ->emptyStateIcon('heroicon-o-newspaper');
     }
 }

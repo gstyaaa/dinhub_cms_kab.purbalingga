@@ -41,7 +41,7 @@ class DokumenPublikTable
 
                 TextColumn::make('file_status')
                     ->label('Status Berkas PDF')
-                    ->state(fn ($record): string => $record->file_path ? 'Sudah Diunggah' : 'Belum Diunggah')
+                    ->state(fn ($record): string => $record->file_path ? 'Tersedia' : 'Belum Diunggah')
                     ->badge()
                     ->color(fn ($record): string => $record->file_path ? 'success' : 'danger'),
 
@@ -57,21 +57,21 @@ class DokumenPublikTable
             ])
             ->filters([
                 SelectFilter::make('category')
-                    ->label('Kategori')
+                    ->label('Kategori Dokumen')
                     ->options(\App\Models\PublicDocument::CATEGORIES),
             ])
             ->recordActions([
                 EditAction::make()
-                    ->label('Edit Dokumen'),
+                    ->label('Ubah'),
                 DeleteAction::make()
                     ->label('Hapus')
                     ->modalHeading('Konfirmasi Hapus Dokumen')
                     ->modalDescription('Apakah Anda yakin ingin menghapus dokumen ini? Dokumen PDF juga akan dihapus dari server.')
-                    ->modalSubmitActionLabel('Hapus')
+                    ->modalSubmitActionLabel('Ya, Hapus')
                     ->modalCancelActionLabel('Batal'),
             ])
-            ->emptyStateHeading('Belum Ada Dokumen Publik')
-            ->emptyStateDescription('Daftar dokumen resmi akan otomatis ditampilkan.')
-            ->emptyStateIcon('heroicon-o-document-text');
+            ->emptyStateHeading('Belum ada data dokumen')
+            ->emptyStateDescription('Silakan klik "Tambah Dokumen" untuk mengunggah berkas PDF dokumen resmi.')
+            ->emptyStateIcon('heroicon-o-folder-open');
     }
 }
