@@ -41,7 +41,7 @@ class DokumenPublikTest extends TestCase
         PublicDocument::create([
             'category' => 'Standar Pelayanan',
             'title' => 'SK Standar Pelayanan 2026',
-            'file_path' => null,
+            'file_path' => 'documents/sk_pelayanan.pdf',
             'is_active' => true,
         ]);
 

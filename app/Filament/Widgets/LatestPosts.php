@@ -12,7 +12,7 @@ class LatestPosts extends TableWidget
 {
     protected static ?int $sort = 4;
 
-    protected static ?string $heading = 'Aktivitas Terbaru - Berita Terakhir';
+    protected static ?string $heading = 'Berita Terbaru';
 
     protected int|string|array $columnSpan = 'full';
 
@@ -21,40 +21,52 @@ class LatestPosts extends TableWidget
         return $table
             ->query(
                 Post::query()
-                    ->latest()
-                    ->limit(5)
+                    ->latest('published_at')
+                    ->latest('created_at')
             )
+            ->defaultSort('published_at', 'desc')
+            ->defaultPaginationPageOption(5)
             ->columns([
                 ImageColumn::make('thumbnail')
-                    ->label('')
+                    ->label('Thumbnail')
                     ->disk('public')
                     ->square()
                     ->height(45),
 
                 TextColumn::make('title')
-                    ->label('Judul')
+                    ->label('Judul Berita')
                     ->limit(50)
-                    ->searchable(),
+                    ->searchable()
+                    ->sortable(),
 
                 TextColumn::make('category.name')
                     ->label('Kategori')
-                    ->badge(),
+                    ->badge()
+                    ->sortable(),
 
                 TextColumn::make('author.name')
-                    ->label('Penulis'),
+                    ->label('Penulis')
+                    ->sortable(),
 
                 TextColumn::make('status')
                     ->label('Status')
                     ->badge()
+                    ->formatStateUsing(fn (string $state): string => match ($state) {
+                        'published' => 'Diterbitkan',
+                        'draft' => 'Draf',
+                        default => $state,
+                    })
                     ->color(fn (string $state): string => match ($state) {
                         'published' => 'success',
                         'draft' => 'warning',
                         default => 'gray',
-                    }),
+                    })
+                    ->sortable(),
 
                 TextColumn::make('published_at')
-                    ->label('Tanggal')
-                    ->date('d M Y'),
+                    ->label('Tanggal Publikasi')
+                    ->date('d M Y')
+                    ->sortable(),
             ]);
     }
 }
