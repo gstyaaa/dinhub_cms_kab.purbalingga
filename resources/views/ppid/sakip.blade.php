@@ -14,7 +14,7 @@
 
     {{-- 1. Banner Statis Lokal (Bukan CMS) --}}
     <section class="position-relative py-5 text-white overflow-hidden" style="background: linear-gradient(135deg, #064e3b 0%, #047857 60%, #10b981 100%);">
-        <div class="position-absolute top-0 start-0 w-100 h-100 opacity-25" style="background-image: url('{{ asset('images/hero-default.webp') }}'); background-size: cover; background-position: center;"></div>
+        <div class="position-absolute top-0 start-0 w-100 h-100 opacity-25" style="background-image: url('{{ asset('images/SAKIP.webp') }}'); background-size: cover; background-position: center;"></div>
         <div class="container position-relative py-4 text-center">
             {{-- Solid Icon Badge --}}
             <div class="bg-success text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center shadow-lg border border-2 border-white" style="width: 76px; height: 76px;">
