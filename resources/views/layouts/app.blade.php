@@ -408,18 +408,56 @@
             border-color: rgba(13, 110, 253, 0.15) !important;
         }
 
-        /* Slow & Silky 1.5s Fade Transition for Hero Banner Carousel */
-        #heroBgCarousel.carousel-fade .carousel-item {
-            opacity: 0;
-            transition-property: opacity;
-            transition-duration: 1.5s !important;
-            transition-timing-function: ease-in-out !important;
+        /* Pure Smooth Opacity Fade Transition for Hero Banner Carousel */
+        #heroBgCarousel.carousel-fade .carousel-inner {
+            overflow: hidden;
         }
 
-        #heroBgCarousel.carousel-fade .carousel-item.active,
+        #heroBgCarousel.carousel-fade .carousel-item {
+            opacity: 0 !important;
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            transform: none !important;
+            left: 0 !important;
+            top: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            position: absolute !important;
+            display: block !important;
+            pointer-events: none;
+            float: none !important;
+        }
+
+        #heroBgCarousel.carousel-fade .carousel-item.active {
+            z-index: 2 !important;
+            opacity: 1 !important;
+            transform: none !important;
+            pointer-events: auto;
+            position: relative !important;
+        }
+
         #heroBgCarousel.carousel-fade .carousel-item-next.carousel-item-start,
         #heroBgCarousel.carousel-fade .carousel-item-prev.carousel-item-end {
-            opacity: 1;
+            z-index: 2 !important;
+            opacity: 1 !important;
+            transform: none !important;
+        }
+
+        #heroBgCarousel.carousel-fade .active.carousel-item-start,
+        #heroBgCarousel.carousel-fade .active.carousel-item-end {
+            z-index: 1 !important;
+            opacity: 0 !important;
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            transform: none !important;
+        }
+
+        #heroBgCarousel .carousel-item img {
+            transition: transform 6s cubic-bezier(0.25, 1, 0.5, 1) !important;
+            transform: scale(1.04);
+            will-change: transform, opacity;
+        }
+
+        #heroBgCarousel .carousel-item.active img {
+            transform: scale(1.0);
         }
 
         /* Native HTML5 Details Accordion Styling */

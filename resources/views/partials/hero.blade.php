@@ -68,8 +68,6 @@
         {{-- TOMBOL PANAH KIRI (PREV) --}}
         <button class="hero-arrow-btn hero-arrow-prev position-absolute top-50 start-0 translate-middle-y"
                 type="button"
-                data-bs-target="#heroBgCarousel"
-                data-bs-slide="prev"
                 aria-label="Banner Sebelumnya">
             <svg class="hero-arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M15 18l-6-6 6-6"/>
@@ -79,8 +77,6 @@
         {{-- TOMBOL PANAH KANAN (NEXT) --}}
         <button class="hero-arrow-btn hero-arrow-next position-absolute top-50 end-0 translate-middle-y"
                 type="button"
-                data-bs-target="#heroBgCarousel"
-                data-bs-slide="next"
                 aria-label="Banner Selanjutnya">
             <svg class="hero-arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M9 18l6-6-6-6"/>
@@ -91,8 +87,6 @@
         <div class="position-absolute bottom-0 start-50 translate-middle-x mb-3 d-flex align-items-center gap-2 hero-indicators-container">
             @foreach($banners as $index => $banner)
                 <button type="button"
-                        data-bs-target="#heroBgCarousel"
-                        data-bs-slide-to="{{ $index }}"
                         class="hero-indicator-btn {{ $loop->first ? 'active' : '' }}"
                         aria-current="{{ $loop->first ? 'true' : 'false' }}"
                         aria-label="Slide {{ $index + 1 }}"
@@ -142,7 +136,7 @@
         box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(8px);
         padding: 0;
-        transition: all 0.2s ease-in-out;
+        transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .hero-arrow-prev {
@@ -163,6 +157,10 @@
         border-color: #ffffff !important;
         transform: translateY(-50%) scale(1.1) !important;
         box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6) !important;
+    }
+
+    .hero-arrow-btn:active {
+        transform: translateY(-50%) scale(0.95) !important;
     }
 
     /* Indicators Base Styling */
@@ -231,56 +229,69 @@
         const heroCarouselEl = document.getElementById("heroBgCarousel");
         if (!heroCarouselEl) return;
 
+        let isSliding = false;
+
+        heroCarouselEl.addEventListener('slide.bs.carousel', function () {
+            isSliding = true;
+        });
+
+        heroCarouselEl.addEventListener('slid.bs.carousel', function (e) {
+            isSliding = false;
+
+            const indicatorBtns = document.querySelectorAll('.hero-indicator-btn');
+            indicatorBtns.forEach((btn, idx) => {
+                if (idx === e.to) {
+                    btn.style.width = '28px';
+                    btn.style.backgroundColor = '#3b82f6';
+                    btn.classList.add('active');
+                } else {
+                    btn.style.width = '10px';
+                    btn.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
+                    btn.classList.remove('active');
+                }
+            });
+        });
+
         function initCarousel() {
             if (typeof bootstrap !== "undefined" && bootstrap.Carousel) {
                 const instance = bootstrap.Carousel.getOrCreateInstance(heroCarouselEl, {
-                    interval: 10000,
+                    interval: 8000,
                     ride: 'carousel',
                     pause: 'hover',
                     touch: true
                 });
                 instance.cycle();
 
-                // Failsafe Event Handlers
                 const prevBtn = document.querySelector('.hero-arrow-prev');
                 const nextBtn = document.querySelector('.hero-arrow-next');
 
                 if (prevBtn) {
-                    prevBtn.onclick = function (e) {
+                    prevBtn.addEventListener('click', function (e) {
                         e.preventDefault();
                         e.stopPropagation();
-                        instance.prev();
-                    };
+                        if (!isSliding) {
+                            instance.prev();
+                        }
+                    });
                 }
 
                 if (nextBtn) {
-                    nextBtn.onclick = function (e) {
+                    nextBtn.addEventListener('click', function (e) {
                         e.preventDefault();
                         e.stopPropagation();
-                        instance.next();
-                    };
+                        if (!isSliding) {
+                            instance.next();
+                        }
+                    });
                 }
 
                 const indicatorBtns = document.querySelectorAll('.hero-indicator-btn');
                 indicatorBtns.forEach((btn, idx) => {
-                    btn.onclick = function (e) {
+                    btn.addEventListener('click', function (e) {
                         e.preventDefault();
                         e.stopPropagation();
-                        instance.to(idx);
-                    };
-                });
-
-                // Animate Indicators on Slide Event
-                heroCarouselEl.addEventListener('slide.bs.carousel', function (e) {
-                    indicatorBtns.forEach((btn, idx) => {
-                        if (idx === e.to) {
-                            btn.style.width = '28px';
-                            btn.style.backgroundColor = '#3b82f6';
-                            btn.classList.add('active');
-                        } else {
-                            btn.style.width = '10px';
-                            btn.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
-                            btn.classList.remove('active');
+                        if (!isSliding) {
+                            instance.to(idx);
                         }
                     });
                 });
