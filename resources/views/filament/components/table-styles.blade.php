@@ -134,7 +134,7 @@
     .fi-layout,
     .fi-sidebar,
     aside.fi-sidebar {
-        --sidebar-width: 17.25rem !important; /* ~276px */
+        --sidebar-width: 17.875rem !important; /* ~286px */
         --collapsed-sidebar-width: 4.5rem !important;
     }
 
@@ -179,8 +179,8 @@
     /* Compact Sidebar Nav & Group Spacing (Eliminating Vertical Scrollbar) */
     nav.fi-sidebar-nav,
     .fi-sidebar-nav {
-        padding-top: 0.25rem !important;
-        padding-bottom: 0.25rem !important;
+        padding-top: 0.15rem !important;
+        padding-bottom: 0.15rem !important;
         padding-left: 0.5rem !important;
         padding-right: 0.5rem !important;
     }
@@ -196,6 +196,13 @@
         margin-top: 0.35rem !important;
         margin-bottom: 0.1rem !important;
     }
+/* Subtle divider between groups */
+.fi-sidebar-group::after {
+    content: "";
+    display: block;
+    border-bottom: 1px solid #e2e8f0;
+    margin: 0.5rem 0;
+}
 
     .fi-sidebar-group-label {
         font-size: 0.6875rem !important; /* 11px */
@@ -223,7 +230,7 @@
         height: 36px !important;
         font-size: 0.8125rem !important; /* 13px */
         color: #334155 !important;
-        border-radius: 0.375rem !important;
+        border-radius: 0.5rem !important;
         padding-left: 0.65rem !important;
         padding-right: 0.65rem !important;
         gap: 0.5rem !important;
@@ -284,7 +291,7 @@
 
     .fi-welcome-header-card {
         background-color: #ffffff !important;
-        border: 1px solid #e5e7eb !important;
+        border: 1px solid #e2e8f0 !important;
         border-left: 4px solid #0d6efd !important;
         box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
         padding: 1.5rem !important; /* 24px */
