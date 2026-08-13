@@ -11,6 +11,14 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::firstOrCreate(
+            ['email' => 'admin@dinhub-pbg.news'],
+            [
+                'name' => 'admin_dinhubpbg',
+                'password' => Hash::make('password'),
+            ]
+        );
+
+        User::firstOrCreate(
             ['email' => 'admin@purbalinggakab.go.id'],
             [
                 'name' => 'Admin Dinhub',

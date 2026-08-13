@@ -1,43 +1,87 @@
 # CMS Dinas Perhubungan Kabupaten Purbalingga 🚍
 
-Sistem Manajemen Konten (CMS) dan Portal Informasi Resmi Dinas Perhubungan Kabupaten Purbalingga dibangun menggunakan **Laravel 11** & **Filament v3**.
+Sistem Manajemen Konten (CMS) dan Portal Informasi Resmi Dinas Perhubungan Kabupaten Purbalingga dibangun menggunakan **Laravel 13** (`^13.8`), **Filament v5** (`^5.6`), dan **Vite 8** (`^8.0.0`).
 
 ---
 
 ## 🛠️ Persyaratan Sistem (System Requirements)
 
-Di ekosistem PHP/Laravel, daftar dependency dikelola secara otomatis oleh `composer.json` dan `package.json` (bukan `requirements.txt` seperti di Python).
-
-Pastikan perangkat/server kamu telah terpasang:
-- **PHP**: `>= 8.2` (Ekstensi wajib: `pdo`, `mbstring`, `openssl`, `fileinfo`, `gd` / `imagick`)
+Pastikan perangkat atau server produksi telah memenuhi spesifikasi berikut:
+- **PHP**: `>= 8.3` (Ekstensi wajib: `pdo_mysql`, `mbstring`, `openssl`, `fileinfo`, `gd`/`imagick`, `xml`, `ctype`, `tokenizer`, `bcmath`, `curl`)
 - **Database**: MySQL `>= 8.0` atau MariaDB `>= 10.4`
 - **Composer**: `>= 2.5`
 - **Node.js**: `>= 18.x` & **npm** `>= 9.x`
 
 ---
 
-## 🚀 Panduan Instalasi & Memulai (Quick Start)
+## 🔐 Kredensial Administrator Default
 
-Ikuti langkah-langkah berikut untuk menjalankan proyek di komputer baru / lokal:
+Akun administrator awal di-generate secara otomatis saat menjalankan proses seeding database.
+- **URL Panel Admin**: `https://domain-anda.go.id/admin/login` (atau `http://127.0.0.1:8000/admin/login` untuk lokal)
+- **Kredensial Login**: Merujuk pada seeder di `database/seeders/DatabaseSeeder.php` *(Sangat disarankan untuk segera memperbarui password setelah pertama kali masuk melalui menu profil Admin Panel)*.
 
-### 1. Clone Repository & Masuk Folder
+---
+
+## 🌐 1. Panduan Deployment / Hosting (Server Production)
+
+Panduan utama untuk mempublikasikan proyek ke server hosting / VPS:
+
+### A. Persyaratan Server Production
+- **PHP**: `>= 8.3` (Ekstensi aktif: `pdo_mysql`, `mbstring`, `openssl`, `fileinfo`, `gd`, `xml`, `curl`)
+- **Database**: MySQL `>= 8.0` / MariaDB `>= 10.4`
+- **Web Server**: Nginx / Apache (dengan `mod_rewrite` aktif)
+- **Composer**: `>= 2.5` & **Node.js**: `>= 18.x`
+
+### B. Langkah Deployment (VPS / cPanel Terminal)
 ```bash
-git clone https://github.com/gstyaaa/dinhub_cms_kab.purbalingga.git
-cd dinhub_cms
+# 1. Clone repository & install dependencies PHP (tanpa paket dev)
+git clone https://github.com/gstyaaa/dinhub_cms_kab.purbalingga.git dishub_cms
+cd dishub_cms
+composer install --no-dev --optimize-autoloader
+
+# 2. Install Node modules & build Vite assets produksi
+npm install
+npm run build
+
+# 3. Setup environment (.env)
+cp .env.example .env
+# Edit .env: set APP_ENV=production, APP_DEBUG=false, & kredensial database
+
+# 4. Generate App Key & Database Setup
+php artisan key:generate
+php artisan migrate --force --seed
+php artisan storage:link
+
+# 5. Caching & Optimasi Performance Laravel
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+php artisan event:cache
+php artisan filament:cache-components
+
+# 6. Set Izin Akses Folder Storage & Bootstrap
+chmod -R 775 storage bootstrap/cache
+chown -R www-data:www-data storage bootstrap/cache
 ```
 
-### 2. Install Dependency PHP & Node.js
+> ⚠️ **PENTING**: Arahkan **Document Root** Nginx / Apache secara langsung ke sub-folder `public/` (bukan root folder proyek).
+
+---
+
+## 💻 2. Panduan Menjalankan di Komputer Lokal (Development)
+
+Ikuti langkah-langkah berikut untuk menjalankan proyek di komputer lokal:
+
+### 1. Install Dependency & Setup Environment
 ```bash
 composer install
 npm install
+cp .env.example .env
+php artisan key:generate
 ```
 
-### 3. Konfigurasi Environment (`.env`)
-Salin berkas `.env.example` menjadi `.env`:
-```bash
-cp .env.example .env
-```
-Buka berkas `.env` lalu sesuaikan konfigurasi database:
+### 2. Setup Database Lokal (`.env`)
+Pastikan MySQL XAMPP/Laragon aktif, lalu atur `.env`:
 ```env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -47,33 +91,19 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-### 4. Generate App Key & Jalankan Migration
+### 3. Migrasi Database & Storage Link
 ```bash
-php artisan key:generate
 php artisan migrate --seed
 php artisan storage:link
 ```
 
-### 5. Jalankan Server Lokal
-Jalankan server Laravel dan kompiler asset di dua terminal terpisah:
-
-**Terminal 1 (Laravel Server):**
-```bash
-php artisan serve
-```
-
-**Terminal 2 (Assets Builder):**
-```bash
-npm run dev
-```
-
-Aplikasi dapat diakses di browser melalui alamat:
-- **Portal Publik**: `http://127.0.0.1:8000`
-- **Panel Administrator**: `http://127.0.0.1:8000/admin`
+### 4. Jalankan Server Lokal (2 Terminal)
+* **Terminal 1 (Server Laravel)**: `php artisan serve`
+* **Terminal 2 (Vite Asset Builder)**: `npm run dev`
 
 ---
 
-## 💻 Fitur Utama Aplikasi
+## 💻 3. Fitur Utama Aplikasi
 
 - 🏠 **Beranda & Banner Slider**: Banner spanduk utama dinamis dapat diubah dari Admin Panel.
 - 📰 **Berita & Pengumuman**: Publikasi artikel berita dan pengumuman instansi lengkap dengan kategori.
@@ -84,16 +114,6 @@ Aplikasi dapat diakses di browser melalui alamat:
 
 ---
 
-## 🔐 Kredensial Administrator Default
-
-Setelah menjalankan `php artisan db:seed`, kamu dapat login ke admin panel menggunakan:
-- **URL Login**: `http://127.0.0.1:8000/admin/login`
-- **Email**: `admin@purbalinggakab.go.id`
-- **Password**: `password` *(Harap ganti password setelah pertama kali login)*
-
----
-
 ## 📄 Lisensi
 
 Hak Cipta © 2026 **Dinas Perhubungan Kabupaten Purbalingga**. Seluruh Hak Cipta Dilindungi.
-
